@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: PR body has required sections
+        if: github.event_name == 'pull_request'
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          for s in "## Acceptance criteria" "## Verified" "## NOT verified"; do
+            if ! printf '%s' "$BODY" | grep -qF "$s"; then
+              echo "::error::PR description is missing section: $s"
+              exit 1
+            fi
+          done
+
+      - name: Run tests if defined
+        run: |
+          if [ -f Makefile ] && grep -q '^test:' Makefile; then
+            make test
+          else
+            echo "No 'make test' target yet. Add one (Phase 1)."
+          fi

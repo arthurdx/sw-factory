@@ -1,0 +1,2002 @@
+# tactiq.io free youtube transcript
+# Como Construir uma FÁBRICA DE SOFTWARE AGÊNTICA na Prática?
+# https://www.youtube.com/watch/5UwvjCVPigM
+
+00:00:00.080 É, gente, qual que é a ideia de uma
+00:00:02.159 fábrica de software, tá? Quando a gente
+00:00:03.760 fala de fábrica de software, é,
+00:00:07.120 sempre se pensa assim, tipo, ah, é um é
+00:00:09.280 um sistema, algo assim, mas tem que
+00:00:11.080 pensar que a ideia de fábrica de
+00:00:13.040 software vem de muito tempo atrás, tá?
+00:00:15.120 Isso aí foi, putz, eu não lembro, 1960,
+00:00:19.240 acho que criaram o termo que essa ideia,
+00:00:21.840 assim como uma fábrica de carros, tu
+00:00:23.640 conseguir
+00:00:25.279 entender da tua fábrica quais são eh
+00:00:30.119 as etapas
+00:00:32.079 e tu automatizar ou tornar elas mais
+00:00:35.440 efetivas. Só e só a gente pegar uma
+00:00:37.399 fábrica de carro, por exemplo, cara, não
+00:00:39.920 importa é quão rápido é para montar uma
+00:00:42.840 porta ou montar o motor, o que importa é
+00:00:45.039 o carro no final montado. E aí tu vai
+00:00:47.719 otimizar a fábrica para ter aquele carro
+00:00:50.360 sendo montado mais rápido. Nisso vai ter
+00:00:52.120 robôs, vai ter pessoas trabalhando, esse
+00:00:53.680 tipo de coisa. A fábrica de software é a
+00:00:55.520 mesma coisa. Até 2022 por aí, a nossa
+00:00:58.480 fábrica de software como
+00:01:02.000 alguém tinha aqui uma visão e filtrava e
+00:01:04.040 fazia triagem das coisas. tinha um
+00:01:06.240 backlog,
+00:01:07.799 o humano construía, fazia testes
+00:01:09.759 automatizados, testava as coisas
+00:01:12.159 manualmente, automatizado, abriam pro
+00:01:14.560 request, revisava pro request. Isso
+00:01:16.799 levava de dias, vamos botar aqui, de
+00:01:18.680 dias a semanas para construir, tá? E a
+00:01:24.720 etapa de revisão depois levava de horas
+00:01:27.079 ou dias.
+00:01:29.040 Aí com a primeira versão da IA, a
+00:01:31.520 primeira fase da IA, que eu chamo da
+00:01:34.079 fábrica agêntica, fábrica de software
+00:01:35.960 agêntica V1, a gente começou a fazer o
+00:01:39.479 quê? A gente começou a usar IA para nos
+00:01:43.479 ajudar no fluxo de desenvolvimento. Ou
+00:01:45.799 seja, a gente pegou uma das partes que
+00:01:48.119 era o maior gargalo e o maior custo
+00:01:50.040 desenvolver software e botou a gente
+00:01:52.200 ali, ou seja, foi o primeiro ganho que a
+00:01:54.920 gente teve com IA, né? Então, se a gente
+00:01:58.439 olhar pra fábrica, que eu imagino que a
+00:01:59.759 maioria de vocês tá trabalhando ainda
+00:02:01.000 hoje nesse formato e é OK, tá gente? É o
+00:02:03.880 é o estado da arte hoje na maioria das
+00:02:06.759 empresas. É, humano,
+00:02:09.598 o Mano ainda tá envolvido no no review
+00:02:11.560 do P request. O humano tá tá envolvido
+00:02:13.800 em ver como é que tá a aplicação em
+00:02:15.400 produção. O humano tá envolvido em fazer
+00:02:18.000 triagem de Cidente, de fazer triagem de
+00:02:20.200 reclamação de cliente. O humano tá
+00:02:23.080 envolvido aqui em filtrar as coisas e
+00:02:25.000 botar no backlog. E o mano tá envolvido
+00:02:27.239 em pegar as coisas do backlog e aí sim
+00:02:29.720 usar um agente para implementar.
+00:02:32.720 Normalmente num fluxo de spec driven,
+00:02:34.360 né? Oum pega a tarefa, faz uma pesquisa,
+00:02:37.360 faz uma spec, implementa aquela spec,
+00:02:40.560 revisa o código, eh, revisa até spec em
+00:02:44.959 si, depois abre o P request, naquele P
+00:02:47.440 request revisa, usa um agente para
+00:02:50.319 ajudar, para ganhar um pouco de tempo.
+00:02:52.879 Esse fluxo aqui a gente já diminuiu
+00:02:57.000 de dias e semanas para construir para
+00:03:01.319 horas e dias.
+00:03:03.319 Então, só aqui a gente teve um ganho
+00:03:04.720 grande, né? A gente já diminuiu muito
+00:03:08.480 essa parte do fluxo de desenvolver
+00:03:11.239 software. O code review ele depende,
+00:03:15.720 algumas empresas eh ainda tão
+00:03:18.560 engatinhando nessa parte, que é uma
+00:03:20.120 parte que leva um pouco mais de tempo,
+00:03:21.480 né? tem que ter o code base bom, tu tem
+00:03:23.480 que ter um code review com IA bom, mas
+00:03:25.599 tu consegue fazer por requests maiores.
+00:03:28.040 Então aqui a gente já começou a ter
+00:03:29.040 ganho. Empresas que já t uma boa
+00:03:30.599 qualidade começaram a ter um bom ganho
+00:03:33.439 aqui. E aí a gente passa pro que eu
+00:03:37.640 chamo da fábrica de software agêntica
+00:03:41.200 V2,
+00:03:43.120 que é a transição que a gente tá fazendo
+00:03:45.720 e ela é basicamente um loop. Então pensa
+00:03:47.640 o seguinte, aqui a gente tira um bom
+00:03:50.599 proveito dos agentes, mas não todo o
+00:03:53.239 proveito deles. Os modelos são muito
+00:03:55.040 bons hoje em dia, a gente tem muita
+00:03:56.280 tecnologia. Usar e a só para
+00:03:58.519 desenvolver, só para dizer para um
+00:04:00.200 agente o que que ele tem que fazer é um
+00:04:02.159 uso muito básico, né? E essa parte aqui
+00:04:04.040 do códigos, não sei que vocês usam de
+00:04:05.959 modelo hoje, mas eu tenho usado muito
+00:04:07.439 OPS e é bizarra a qualidade que tá o
+00:04:11.239 output do Opus. Então tu começa a ver
+00:04:12.840 que, cara, o código é uma coisa que não
+00:04:16.320 que a gente não vai se preocupar, óbvio
+00:04:17.399 que a gente vai se preocupar com a
+00:04:18.320 arquitetura, com o desenho do código,
+00:04:20.160 para onde as coisas estão indo, mas
+00:04:21.680 escrever o código a gente não vai se
+00:04:23.320 preocupar mais, a gente vai mover para
+00:04:24.720 uma camada acima. Então quando a gente
+00:04:27.440 entra na fábrica V2, inclusive se vocês
+00:04:30.800 quiserem tirar foto e botar no LinkedIn,
+00:04:32.400 esse aqui é um slide muito
+00:04:33.919 instagramável, tá? É bom para pras
+00:04:35.919 pessoas ver que vocês estão estudando, é
+00:04:37.320 bom para nós, marca a gente, a gente eh
+00:04:40.240 compartilha lá. Esse slide é muito
+00:04:42.560 Instagram, mas por isso que a gente tá
+00:04:44.639 movendo agora para um loop. E a e a
+00:04:47.800 primeira coisa que eu quero que vocês
+00:04:48.919 pensem aqui é cada vez mais humanos e
+00:04:52.280 agentes vão trabalhar junto. A transição
+00:04:54.320 que a gente tá fazendo agora não é de eu
+00:04:56.919 vou dar prompts melhores ou eu vou ter
+00:05:00.039 um harness melhor com skills e tal, não.
+00:05:03.039 É, eu vou começar cada vez mais a
+00:05:05.720 delegar o meu trabalho para agentes que
+00:05:08.880 são autônomos. autônomo. O que eu digo
+00:05:11.000 é, ele sabe fazer o trabalho dele sem eu
+00:05:13.440 ter que estar dando um prompt para ele
+00:05:14.720 toda hora ou guiando ele toda hora. Eu
+00:05:16.720 não preciso estar controlando ele, ele
+00:05:18.840 sabe cada vez mais fazer o trabalho
+00:05:20.199 dele. E aí a gente começa a delegar
+00:05:22.840 partes do fluxo de desenvolvimento para
+00:05:24.639 esses agentes. Então, quando tu olha o
+00:05:27.039 desenho de uma fábrica de software
+00:05:29.680 agêntica V2, tu tem agentes na triagem.
+00:05:33.520 Então, por exemplo, aconteceu um
+00:05:34.880 incidente, tem uma feature request, uma
+00:05:37.240 reclamação de um de um de um usuário,
+00:05:39.639 cai na triagem, o próprio agente faz
+00:05:41.639 essa triagem e aí ele te chama ou não
+00:05:43.800 nisso, ele pode abrir um por request de
+00:05:45.319 algo que ele sabe resolver.
+00:05:47.520 O backlog,
+00:05:49.319 quando entra um item no backlog, que é,
+00:05:51.000 por exemplo, um projeto novo, aí sim o
+00:05:53.479 humano entra. Por qu? Onde que tá o
+00:05:54.960 diferencial do humano? O diferencial
+00:05:56.280 humano tá aqui, ó, na parte que a gente
+00:05:58.440 chama do intent, ou seja, da intenção, a
+00:06:00.800 parte de pesquisar features novas, a
+00:06:02.800 parte de fazer o que a não tem contexto
+00:06:05.000 para fazer. Esse que tá o nosso valor. A
+00:06:07.000 gente vai gastar mais tempo fazendo
+00:06:09.880 pesquisa,
+00:06:11.599 eh, planejando projetos novos. Eu vejo
+00:06:14.560 que o gargalo hoje, pelo menos para mim,
+00:06:16.919 quando eu tô fazendo software, é a minha
+00:06:19.960 habilidade de conseguir planejar e
+00:06:21.759 pesquisar mais. Porque às vezes, eu não
+00:06:23.919 sei vocês, é, não sei se vocês já
+00:06:25.639 passaram por isso, quem já tá efetivo no
+00:06:27.680 uso de a cara, às vezes tu passa tr qu
+00:06:31.759 dias pesquisando um projeto, quando dá
+00:06:34.120 play pro agente fazer, 3, 4 horas, ele
+00:06:36.080 fez tudo. Então, a gente gasta muito
+00:06:37.360 mais tempo pesquisando do que realmente
+00:06:39.479 executando. Isso é normal. Só que é uma
+00:06:41.479 mudança de mentalidade, né? Tipo, teve
+00:06:44.120 projetos que eu tava empolgado para
+00:06:46.840 fazer o projeto, a parte técnica. E
+00:06:49.280 quando eu fiz, foi duas horas, acabou.
+00:06:50.599 Você, putz, cara. Então, meu trabalho
+00:06:52.120 agora é muito mais pesquisa. Então,
+00:06:53.880 pensem nisso, tá, gente? O nosso valor
+00:06:55.720 tá aqui. Essa parte aqui
+00:06:59.599 de implementar,
+00:07:02.000 ela deve ser delegável
+00:07:04.960 para um agente. Por que que eu tô
+00:07:06.160 dizendo isso? O nosso trabalho deve ser
+00:07:09.280 fazer a parte de research, criar um PRD,
+00:07:12.319 um design doc, uma coisa bem estruturada
+00:07:14.199 pra que ela entenda.
+00:07:16.160 A parte de implementar, eu não tenho que
+00:07:18.039 me importar se é eu que vou implementar
+00:07:19.680 na minha máquina, se é um cloud agent,
+00:07:22.680 no cloud, sei lá onde, se é um se é
+00:07:25.599 outro agente implementando, porque assim
+00:07:27.639 eu consigo o quê? Eu consigo paralelizar
+00:07:29.360 o trabalho, eu consigo ter um um
+00:07:32.879 pipeline de implementação que tanto
+00:07:35.120 agentes quanto humanos usam e eu não me
+00:07:37.400 importo onde esse código roda. Só que
+00:07:39.039 para te chegar nisso, tem que ter um bom
+00:07:41.360 fluxo de desenvolvimento e um bom code
+00:07:43.080 base para trabalhar com a isso aí é base
+00:07:45.400 para te chegar numa fábrica agêntica
+00:07:46.680 dessa. E aí tu começa a chegar num
+00:07:48.840 estágio onde humanos e agentes trabalham
+00:07:51.120 no mesmo fluxo.
+00:07:53.080 E essa aqui é a parte que eu vou bater
+00:07:54.400 aqui. A primeira coisa que você tem que
+00:07:56.199 tentar desapegar é dessa essa coisa,
+00:07:57.479 tipo, ah, o código para implementar tem
+00:07:59.520 que rodar só na minha máquina. Não,
+00:08:00.759 cara, tu pode criar uma tesque lá,
+00:08:02.919 aquela tesque vai ser implementada
+00:08:04.479 seguindo as mesmas skills e os padrões,
+00:08:06.840 só que em outro lugar. Aí entra o code
+00:08:09.639 review, o humano entra aqui também, tá?
+00:08:12.360 O mano ainda entra no code review, mas o
+00:08:14.400 que que ele valida? Ele valida o que o
+00:08:16.319 agente não consegue revisar. O agente em
+00:08:19.039 si que tá revisando o código, ele tem
+00:08:20.520 que te dizer: &quot;Olha, e essas partes aqui
+00:08:22.879 tão tão OK, essas partes eu revisei, tem
+00:08:25.800 que melhorar e essas partes eu preciso
+00:08:27.440 de ajuda.&quot; Como que tu faz isso? A gente
+00:08:29.599 tem uma skill aqui, a de Jude, se o
+00:08:31.080 Felipe puder mandar um chat aí pro
+00:08:32.360 pessoal, mas é pegar uma skill boa de
+00:08:35.519 code review que use multiagente, cada um
+00:08:38.039 olha para uma coisa, eh, esmel de
+00:08:40.120 arquitetura, segurança, mas também
+00:08:43.360 analise, tipo, ó, essa mudança que tá
+00:08:45.320 sendo feita, tá sendo feita numa parte
+00:08:46.640 que tem muita lógica de negócio, muitos
+00:08:49.040 commits. Então, eu vou chamar o humano
+00:08:51.720 aqui. Aí tu começa a ter humano nessas
+00:08:53.760 duas partes da fábrica, em coisas que t
+00:08:56.040 muito valor, só que o resto todo ele
+00:08:58.800 opera quase automatizado. Então o deploy
+00:09:01.640 pra produção, o humano fica acompanhando
+00:09:03.279 o deploy, tem um problema, ele mesmo já
+00:09:06.000 vai fazer uma triagem, tentar resolver e
+00:09:07.959 te chamar se ele precisar. Tu começa a
+00:09:09.880 ter esse loop da tua fábrica onde
+00:09:13.079 humanos e agentes trabalham junto, tá?
+00:09:15.480 Então essa é a coisa mais importante
+00:09:16.800 nessa fase que a gente tá indo. E pra
+00:09:19.320 gente, eu vou mostrar isso na prática,
+00:09:20.519 mas para vocês pensarem até, a gente
+00:09:23.160 tava num evento agora lá e o pessoal da
+00:09:26.000 mononday.com eles trouxeram o case deles
+00:09:28.399 lá. A Monday é tipo giro assim, eles
+00:09:31.519 hoje tm mais de 56%
+00:09:33.760 dos por request sendo aprovados e sem
+00:09:36.839 humanos, tá? Claro que isso aí exige
+00:09:38.800 muita maturidade também. a gente não
+00:09:40.560 sabe o nível de profundidade desses pull
+00:09:42.160 requests, mas nem todo pull request é
+00:09:45.959 uma mudança muito complexa. Você
+00:09:48.160 concorda comigo? Pelo menos no meu dia a
+00:09:50.160 dia, eu vejo que, cara, quando eu tô
+00:09:52.000 focado numa feature, que é a coisa que
+00:09:54.040 realmente exige a minha atenção e vem
+00:09:58.079 uma coisa pequena, se eu puder delegar
+00:10:00.360 para alguém fazer, para agente fazer,
+00:10:02.040 ele fazer e entregar aquela coisa sem me
+00:10:04.240 interromper, para mim já é o ganho
+00:10:05.959 grande. E pode ser que daqui a pouco no
+00:10:07.320 teu backlog isso é 30, 40%. Então
+00:10:10.120 trabalhar com a gente não é a Valdemar
+00:10:12.279 tá falando que agora eu vou dar uma
+00:10:13.440 feature fazer toda a feature não vai ser
+00:10:15.320 bem assim porque a feature precisa de um
+00:10:18.000 input humano. Mas se tu daqui a pouco
+00:10:20.000 planejar bem essa feature, tiver um bom
+00:10:21.519 design doc, tiver um bom plano, a tu
+00:10:23.480 pode delegar para ele, ele vai
+00:10:24.560 implementar porque tá tudo bem definido.
+00:10:26.680 Mas o ganho inicial de ter agentes no
+00:10:28.680 teu time é tu delegar coisas que ele
+00:10:31.920 consegue pesquisar, uma triagem, algo
+00:10:33.959 assim, eh coisas operacionais do dia a
+00:10:36.399 dia. ali tá o primeiro ganho absurdo,
+00:10:39.639 mas sim, tu pode delegar coisas maiores.
+00:10:41.920 E eu vou falar um pouco disso. E pra
+00:10:44.839 gente entender, eu quero que a gente
+00:10:46.079 separem duas coisas aqui, tá? A gente
+00:10:48.040 tem
+00:10:49.600 assistentes pessoais, tipo Grockbot,
+00:10:52.519 tipo o Dots da Open AI que eles acabaram
+00:10:55.839 de lançar e o Duet da Antropic que eles
+00:10:58.600 vão lançar. Da onde vieram esses
+00:11:01.320 assistentes? Veio da ideia do Open Claw,
+00:11:04.079 do Hermes, que são o quê? São agentes
+00:11:07.279 sempre on. Então, tu vai lá, instala ele
+00:11:09.279 numa máquina, o Open Call. Ele tá sempre
+00:11:11.839 rodando, ele tem uma memória interna,
+00:11:13.360 então ele fica aprendendo com a maneira
+00:11:14.480 que tu trabalha. Tu instala skills nele,
+00:11:16.519 tu conecta as coisas nele, ele fica
+00:11:18.120 sempre on e ele consegue ser reativo as
+00:11:20.320 coisas. manda uma mensagem do Slack, ele
+00:11:22.399 vai fazer o que tu pedir para ele.
+00:11:25.519 E aí o El Musk e todas as empresas
+00:11:28.200 viram: &quot;Cara, isso tem um baita espaço
+00:11:31.480 para ter esses agentes que são
+00:11:32.560 assistente pessoal e hoje precisa de uma
+00:11:35.079 pessoa que tenha conhecimento técnico
+00:11:36.360 para instalar isso numa máquina. Vamos
+00:11:38.120 fazer uma coisa muito simples. Vamos
+00:11:39.440 fazer tipo algo como o Grockbot, né, que
+00:11:41.560 eles fizeram. Então o Grockbot, vou
+00:11:43.560 abrir ele aqui para vocês verem,
+00:11:46.360 trazer um exemplo aqui. O Grockbot ele
+00:11:49.160 nada mais é do que um agente tipo open
+00:11:53.959 para Legos. Tu conecta MCP, tu conecta
+00:11:55.720 todas as coisas, tu usa no dia a dia,
+00:11:57.399 ele tem uma máquina própria, tá vendo?
+00:11:59.480 Se eu ver aqui, ele tem uma máquina
+00:12:00.639 própria. O que que isso quer dizer? Ele
+00:12:02.200 consegue entrar no LinkedIn, consegue
+00:12:03.600 entrar no WhatsApp, ele consegue fazer
+00:12:04.880 tudo que o humano consegue. Basta tu
+00:12:07.240 ensinar ele, tá? Praticamente tudo, tudo
+00:12:09.320 que é automatizável, né?
+00:12:11.839 E aí, quando eu falo que ele é um
+00:12:13.560 assistente pessoal, o que que eu quero
+00:12:14.920 dizer? Ele tá conectado usando a minha
+00:12:16.760 identidade, as minhas ferramentas e eu
+00:12:18.920 uso ele para me assistir no dia a dia.
+00:12:20.519 Por exemplo, esse caso que eu tô
+00:12:21.440 mostrando para vocês aqui, é um agente
+00:12:23.680 que eu uso para acompanhar uma feature,
+00:12:25.320 ou seja, eu fiz uma feature dentro da
+00:12:26.760 Techeds Clube, eu botei ela pra produção
+00:12:30.040 e ele acompanha ela todo dia e me diz
+00:12:31.959 como que tá o uso, como que tá as
+00:12:33.240 métricas, o que que a gente pode fazer,
+00:12:35.760 o que que pode melhorar. Então pensa
+00:12:37.920 assim, se tu lidera projetos, pensa
+00:12:40.800 quando tu lidera, quando tu tá liderando
+00:12:42.279 o projeto, tá liderando o projeto, tem
+00:12:44.199 um dev no teu time, tem o PM, tu tem que
+00:12:46.519 estar acompanhando backlog, tem que
+00:12:48.120 estar sabendo o que todo mundo tá
+00:12:49.040 fazendo, perguntando coisas, cara. Tu
+00:12:51.519 bota um bote desse, tu conecta no slack,
+00:12:53.800 conecta no teu backlog, conecta em tudo.
+00:12:55.880 Todo dia ele te diz: &quot;Olha, teu projeto
+00:12:57.160 tá indo conforme o plano&quot;. Ah, não tá
+00:12:59.360 indo porque o Vittor ali não entregou a
+00:13:02.360 parte dele. Então, tu tem que agir. Ó,
+00:13:04.800 eu sugiro que tu aja dessa maneira. Olha
+00:13:06.760 isso, olha aquilo. Então tu começa a
+00:13:08.440 ganhar muita produtividade no geral e tu
+00:13:10.720 começa a delegar coisas que tu perderia
+00:13:12.440 tempo para um agente. Então o que que eu
+00:13:14.920 uso? O agente esse que é o meu
+00:13:16.880 secretário, tipo Grockbot, eu uso pro
+00:13:19.120 trabalho para acompanhar features. Eu
+00:13:20.680 uso pessoalmente para acompanhar todas
+00:13:22.120 as minhas redes, é WhatsApp, LinkedIn e
+00:13:25.040 e-mail, todas as coisas e me dizer o que
+00:13:26.399 que eu tenho que agir todo dia.
+00:13:28.120 Acompanhar o slack da empresa.
+00:13:30.920 É financeiro também. Eu uso bastante
+00:13:33.320 para investimento, analisar ações e todo
+00:13:35.560 esse tipo de coisa. Então penso que sim,
+00:13:37.560 vocês podem automatizar tudo do dia do
+00:13:39.000 dia a dia de vocês. Isso aqui vocês usam
+00:13:41.639 um agente como esse. E aí a gente tem
+00:13:44.519 outro tipo de agente que é o que eu
+00:13:46.480 chamo de teammate, que é um agente,
+00:13:48.880 pensa o seguinte, o Grockbot ele me
+00:13:51.360 ajuda como assistente meu, só que ele
+00:13:54.639 tem a minha idade, minha identidade. Eu
+00:13:56.720 não posso compartilhar ele com o meu
+00:13:57.920 time. Eu não posso deixar meu time usar
+00:13:59.279 ele porque tá conectado nas minhas
+00:14:00.320 redes, nas meus MCPs e tal.
+00:14:02.959 Mas se vocês verem, tem uma tem uma
+00:14:05.360 oportunidade gigante para ter um
+00:14:07.000 assistente pro time também, que é tipo o
+00:14:09.399 time pediu alguma coisa se assistente
+00:14:10.839 usar. Aí entra o teammate aqui. Ele tem,
+00:14:15.320 ele é o membro do time e a diferença de
+00:14:18.120 um teammate é qual? Ele tem uma
+00:14:19.199 identidade própria. Então vou mostrar
+00:14:20.920 para vocês aqui. Esse aqui, deixa eu
+00:14:23.839 abrir.
+00:14:26.160 Esse é o nosso aqui que a gente tem que
+00:14:29.199 é opa, esse cara aqui
+00:14:32.720 não. Pararã.
+00:14:34.920 É, ó,
+00:14:38.240 que é esse cara. Deixa eu voltar aqui.
+00:14:43.199 Esse cara aqui, ó. Willy.
+00:14:47.800 Então, o Willly nada mais é do que a
+00:14:49.800 cópia do nosso CO, que é o William, né?
+00:14:52.240 Eu fiz ele aqui, ó. Esse aqui é o
+00:14:53.639 William. Eu fiz um bote em homenagem a
+00:14:56.240 ele. E o Willly, ele é um Hermes, então
+00:14:59.600 ele tá rodando numa numa máquina, numa
+00:15:03.040 numa VPS.
+00:15:05.000 Deixa eu só abrir aqui. Cadê? Time dev.
+00:15:09.240 Aqui, ó. E a gente passa delegando
+00:15:11.560 coisas para ele ao longo do dia, ó. Por
+00:15:13.759 exemplo, hoje 13:20 da tarde, eu falei
+00:15:16.800 para ele tirar uma uma feature que tinha
+00:15:18.959 lá. Aqui é uma conversa longa porque eu
+00:15:21.040 pedi para ele arrumar outras coisas, mas
+00:15:23.240 ele tá lá rodando 24 horas, ele tem
+00:15:26.199 acesso a todas nossas informações, nosso
+00:15:27.720 code base e eu vou delegando coisas que
+00:15:29.680 me parariam durante o dia. Olha, resolve
+00:15:31.959 esse problema. Ele vai lá, vai planejar,
+00:15:34.040 vai me falar. No final o que ele fazer,
+00:15:36.720 ele vai gravar um vídeo aqui, me mostrar
+00:15:38.839 o que que ele fez, ó. Então eu posso
+00:15:39.959 abrir aqui e ver o que que ele fez. Ele
+00:15:41.959 grava o vídeo e bota no slack,
+00:15:44.680 ele mesmo abre pro request. Eu vou lá,
+00:15:46.360 reviso pro request, digo para ele, tá
+00:15:47.639 beleza? Ó, aprovado, pode fazer merge.
+00:15:49.680 Ele faz. E o que que é interessante
+00:15:52.279 desse cara aqui, gente? Que que é
+00:15:54.000 interessante? Se eu abrir aqui, ele usa
+00:15:56.959 o mesmo, o nosso mesmo backlog, tá
+00:15:59.240 vendo? Ele tá criando uma tesque no
+00:16:01.680 nosso backlog. E essa que eu digo aqui,
+00:16:04.399 humanos e agentes
+00:16:07.160 cada vez mais trabalham juntos na
+00:16:09.440 fábrica. Na nossa fábrica, a gente é uma
+00:16:11.360 empresa pequena, a gente não tem uma
+00:16:12.800 engenharia muito grande, a gente é uma
+00:16:14.319 empresa de 15 pessoas.
+00:16:16.519 A nossa fábrica é relativamente simples.
+00:16:18.560 A gente tem um bote que é o Hermes, tá
+00:16:20.560 instalado numa máquina, ele tá lá
+00:16:21.920 rodando 24 horas. A gente conversa com
+00:16:24.199 ele através do Slack e ele usa as mesmas
+00:16:26.680 skills que a gente usa para desenvolver.
+00:16:29.040 Ele usa TL6 Packlin. Ele basicamente usa
+00:16:33.040 isso e ele tem algumas instruções
+00:16:35.720 internas de como levantar requisito. E a
+00:16:37.880 fonte da verdade dele é o nosso board no
+00:16:39.839 linear. Então cada teste que ele faz,
+00:16:41.880 ele cria lá, usa triagem todo e tal. Ele
+00:16:45.240 planeja igual a gente. Então eu posso
+00:16:46.759 vir aqui e revisar as coisas. Então eu
+00:16:49.279 consigo delegar muita coisa para ele
+00:16:50.800 fazer e ele opera a nossa fábrica ali.
+00:16:52.759 Ele bota as coisas de triagem, ele bota
+00:16:54.440 as coisas adiante. E outra coisa que é
+00:16:56.720 importante é todo mundo que tá na
+00:16:59.560 fábrica, não importa da onde vem o
+00:17:01.160 trabalho, tá? O trabalho pode vir do
+00:17:02.800 slack, o trabalho pode vir do próprio
+00:17:04.240 liner, tudo deveria entrar pelo pelo
+00:17:06.760 mesmo funil. Se eu vier aqui no Liner,
+00:17:09.199 por exemplo, ó, e criar uma nova tesque,
+00:17:12.760 teste tesque,
+00:17:15.160 eh, diga oi e delegar para ele aqui,
+00:17:20.640 ele deve me responder. Ou seja, o que
+00:17:23.039 que quero dizer? Eu posso criar uma
+00:17:24.400 tesca de qualquer lugar, ela vai entrar
+00:17:26.520 pelo mesmo fluxo de desenvolvimento, tá?
+00:17:29.280 Então isso aqui é importante, gente.
+00:17:32.039 Cadê?
+00:17:34.919 Tã, ó, mandou um oi aqui. E essa
+00:17:37.720 integração, gente, que eu tô mostrando
+00:17:39.640 para vocês, é o uma app do tipo agente
+00:17:44.120 no Liner. Então, quando vocês estão
+00:17:46.000 fazendo a fábrica de vocês, vocês vão
+00:17:48.360 ter que ver que ferramentas vocês vão
+00:17:49.640 usar e como colocar essas coisas. Aqui
+00:17:52.880 meu agente tá integrado no Liner, tá
+00:17:54.240 integrado no slack. É, é relativamente
+00:17:57.159 fácil de fazer. Cada ferramenta tem uma
+00:17:59.200 maneira de fazer. Mas o que que eu quero
+00:18:01.520 deixar para vocês dessa parte?
+00:18:04.120 Um teammate, ele é para trabalhar a
+00:18:06.080 nível de time. Ele tem uma identidade
+00:18:07.440 própria, ou seja, ele tem um e-mail, ele
+00:18:08.919 tem uma conta no GitHub, ele tem um
+00:18:10.919 acesso próprio no Liner, não é um, ele
+00:18:12.640 não é usuário no Liner porque o Liner
+00:18:14.039 tem apps para agentes.
+00:18:17.039 Então ele tem o próprio nível de acesso
+00:18:19.720 dele. A gente consegue auditar ele, ele
+00:18:21.880 tem as próprias coisas dele, mas ele
+00:18:24.159 conecta nas coisas da empresa, ou seja,
+00:18:25.960 ele tem contexto sobre a empresa. Ele
+00:18:27.480 consegue fazer que nem um dev faz,
+00:18:29.440 consegue fazer coisas. Eu vou explicar
+00:18:31.080 como Então essa diferença é fundamental,
+00:18:33.600 tá? Cada vez mais a gente vai trabalhar
+00:18:36.200 junto com agentes na nossa fábrica.
+00:18:38.960 É só vou parar aqui para para
+00:18:40.360 ligeirinho.
+00:18:42.240 O o liner tá muito avançado. Não, mas o
+00:18:44.320 Gira também tem agentes integrandos.
+00:18:52.559 E
+00:18:54.679 deixa eu tomar uma água aqui, dar uma
+00:18:55.960 olhada.
+00:19:01.919 Willly tá rodando uma VPE. Sim, eu mando
+00:19:04.360 depois os os recursos da máquina, mas
+00:19:07.320 não é muito não.
+00:19:10.720 Discord ou slack? O que que é mais
+00:19:12.159 funcional, cara? Disparado ou slack? A
+00:19:13.840 gente usava Discord, foi pro Slack,
+00:19:15.320 porque o Discord não tem integração com
+00:19:16.720 nada. Infelizmente o Discord não é muito
+00:19:19.200 bom para coisas agênticas. O Slack tem
+00:19:21.600 integração com tudo que tu imaginar.
+00:19:22.960 slack e liner são os melhores nesse
+00:19:25.440 fluxo paraa gente fazer essa integração.
+00:19:29.559 Beleza? Então, a gente passa dessa parte
+00:19:32.840 que é a parte de como trabalhar junto e
+00:19:35.280 a gente entra numa parte fundamental
+00:19:36.720 agora. Então, eh, relembrando, isso aqui
+00:19:40.080 é a visão que o mercado tá indo numa
+00:19:42.520 fábrica agêntica V2. humanos e agentes
+00:19:44.799 trabalham junto, a gente usa o mesmo
+00:19:46.720 board, mesma coisa, só que cada time tem
+00:19:50.320 suas ferramentas, as suas eh
+00:19:55.280 as suas coisas para integrar. Não é todo
+00:19:57.320 mundo não, eu não quero que todo mundo
+00:19:58.640 use lineer, não quero todo mundo use
+00:20:00.880 slack. Isso é o que eu uso, que que a
+00:20:03.080 gente usa aqui? O importante que eu
+00:20:04.880 quero que você saiam daqui dessa live
+00:20:06.240 são quais são as
+00:20:10.360 partes que eu preciso para montar uma
+00:20:13.760 fábrica de software agêntica, que
+00:20:16.000 humanos e agentes consigam trabalhar
+00:20:17.320 junto. A primeira coisa é o que eu chamo
+00:20:20.520 de plano de trabalho, que é de onde vem
+00:20:22.679 o trabalho e onde fica o trabalho, que é
+00:20:25.120 esse cara aqui, o intake, de onde entra
+00:20:27.400 o trabalho, no nosso caso, entra da
+00:20:28.799 onde? Do Slack. e no próprio liner
+00:20:31.559 criando uma eixo lá. Beleza? Aonde fica
+00:20:34.760 registrado o trabalho, no nosso caso,
+00:20:37.360 fica no Liner, pode ser no Gira, pode
+00:20:39.280 ser no GitHub Issues, pode ser até no
+00:20:41.640 próprio repositório, se tu trabalha
+00:20:43.200 sozinho. Pensa assim, se tu trabalha
+00:20:45.080 sozinho, tu não precisa botar num liner,
+00:20:47.840 tu pode comitar tuas specs e o seu
+00:20:50.720 próprio repositório. Quando tem um time,
+00:20:54.159 comitar specs é ruim, por ninguém vai
+00:20:57.880 usar aquela ali como a fonte da verdade,
+00:20:59.440 porque ninguém consegue buscar. Uma
+00:21:00.919 pessoa que não é técnica, não consegue
+00:21:01.919 buscar. vai ter que deixar no lío, no
+00:21:03.720 gira. Então, acaba que esses lugares
+00:21:05.720 viram essa camada de orquestração que a
+00:21:08.960 gente usa. A gente achou, né? Não sei se
+00:21:10.919 vocês acharam, mas eu achei, inclusive,
+00:21:12.640 eu trabalhei na Atlas, trabalhei na na
+00:21:14.679 empresa do Gira, mas eu achei que gira
+00:21:16.840 liner ia acabar. E na verdade o que tá
+00:21:19.279 acontecendo é o oposto. Eles estão
+00:21:20.799 virando essa camada
+00:21:23.640 de system record, onde tu bota as coisas
+00:21:25.960 lá e elas são gatilho para outras
+00:21:28.559 etapas. Então, tu bota uma tarefa em
+00:21:29.919 tudo, por exemplo, e automaticamente
+00:21:32.400 daqui a pouco tu inicia um cloud agent,
+00:21:34.279 implementa coisa sem entrar na tua
+00:21:35.880 máquina. Então elas essas essas
+00:21:38.120 ferramentas são importantes e viraram
+00:21:40.039 bem fundamentais. Nem todas as
+00:21:42.360 ferramentas tm o mesmo de nível de
+00:21:44.960 maturidade. Então tem umas que tu vai
+00:21:46.360 ter que fazer mais coisas para integrar,
+00:21:48.320 outras menos coisas, mas todas elas tm
+00:21:51.240 API, tu consegue fazer as coisas que eu
+00:21:53.360 mostrei ali.
+00:21:55.600 Depois tu vai precisar dessa segunda
+00:21:57.200 fase que eu chamo de plano de controle,
+00:21:59.360 que é beleza,
+00:22:01.919 de onde vem e quem delega o quê? Ah, o o
+00:22:06.080 no caso eu falei com a gente,
+00:22:08.880 ele decidiu botar em triagem.
+00:22:11.400 O meu caso é simples, tá? Mas no final,
+00:22:14.320 depois o Felipe vai apresentar, depois
+00:22:16.200 eu vou apresentar um caso ainda mais
+00:22:18.880 avançado que a gente tá trabalhando de
+00:22:19.960 fábrica agênica, que é uma ideia de um
+00:22:21.400 painel de controle para uma fábrica.
+00:22:23.679 Nele a gente tem um dispetcher que
+00:22:26.159 decide para onde mandar o trabalho.
+00:22:27.760 Tipo, isso aqui é uma triagem, então eu
+00:22:28.919 mando para aquele agente. Isso aqui é
+00:22:30.720 uma implementação, mando para aquele
+00:22:32.000 outro. No meu caso, eu tenho só aquele
+00:22:33.840 agente que eu mostrei para vocês, o
+00:22:34.799 Willly, ele mesmo decide o trabalho, ele
+00:22:37.440 mesmo implementa, tá? Porque a nossa
+00:22:38.919 fábrica ela não é tão grande. Depois a
+00:22:42.080 gente tem uma coisa extremamente
+00:22:43.320 fundamental aqui, que é esse cara aqui,
+00:22:45.000 ó, o brain.
+00:22:47.120 Esse cara aqui é o cérebro da fábrica.
+00:22:49.279 Por que que isso é importante? Não tem
+00:22:51.640 como, gente, vocês terem agentes que
+00:22:54.000 trabalham bem, que não tomem o tempo de
+00:22:55.799 vocês, se eles não tiverem todo o
+00:22:59.159 contexto da empresa. A gente usa um cara
+00:23:01.600 aqui que é esse aqui, ó.
+00:23:05.320 Esse
+00:23:06.840 unblocked aqui, tá vendo? Esse cara, ele
+00:23:11.320 é uma ferramenta que tu conecta
+00:23:15.640 basicamente toda tua empresa ali,
+00:23:17.840 Notion, Linear, Code base, tuas
+00:23:20.200 métricas, a gente conecta o post e ele
+00:23:22.400 sabe tudo da empresa. E aí o que que
+00:23:24.600 acontece? A gente conecta o, opa, a
+00:23:27.279 gente conecta
+00:23:29.120 o Will nele. Então o Will também tem
+00:23:31.200 contexto das coisas. Se a gente consegue
+00:23:32.640 perguntar uma uma pergunta de negócio
+00:23:34.279 pro Will, o Willly vai saber porque ele
+00:23:36.600 tem o mesmo ele tem o mesmo contexto que
+00:23:40.880 qualquer outro membro do time. Então o
+00:23:42.720 Brain ele tem que estar nessas camadas
+00:23:44.440 todas. O agente ele tem que tem que
+00:23:47.840 saber dessas coisas. Todo mundo que tá
+00:23:49.320 na fábrica tem que saber. Ah, mas
+00:23:51.240 Valdemar, eu não quero usar aquela
+00:23:52.400 ferramenta, tá? Essa ferramenta aqui, ó,
+00:23:53.880 get un blocked aqui, ó. Vou mandar para
+00:23:56.559 vocês no chat. Eu acho sensacional, tá?
+00:24:00.760 Eh,
+00:24:04.080 ah, eu não quero usar o unblocked. Cara,
+00:24:06.240 faz o teu próprio brain, só que vai dar
+00:24:08.360 mais trabalho. Tu vai ter que usar algum
+00:24:11.000 hag, indexar o conteúdo. Pensa que,
+00:24:13.760 cara, eu, pelo menos eu, eu, Valdemar,
+00:24:16.400 empreendedor, eu não quero gastar o meu
+00:24:18.120 tempo fazendo uma ferramenta que é uma
+00:24:20.159 trabalheira. Eu vou pagar ali e vai e
+00:24:23.159 para mim vale muito a pena. Então vocês
+00:24:25.200 t que decidir isso, mas vai ter que ter
+00:24:26.760 um brain em algum momento. Depois entra
+00:24:29.480 a parte de dispet de execução, que é
+00:24:31.799 onde que a coisa roda. Teu runime vai
+00:24:34.480 ser local, vai ser num cloud agent, vai
+00:24:38.120 ser o CI, vai ser um sandbox isolado,
+00:24:41.360 vai ser uma VPS, por exemplo. Você vai
+00:24:44.200 ter que decidir quais são esses lugares
+00:24:46.840 e depois vem a parte que todos esses
+00:24:49.360 lugares tem que executar
+00:24:52.640 no mesmo padrão do time. Ou seja, o
+00:24:54.840 agente Willy, ele tem que usar as mesmas
+00:24:56.640 skill de desenvolvimento que eu,
+00:24:58.640 Valdemar, uso localmente, que outro
+00:25:00.240 membro do time usa. Por quê? Assim, a
+00:25:02.279 gente tem um padrão, a gente tem um
+00:25:03.159 padrão de tesques, a gente tem um padrão
+00:25:05.080 que a gente melhora e melhora para todo
+00:25:06.880 mundo.
+00:25:09.000 E aqui por último, validação. Então a
+00:25:11.840 gente tem que ter gates. Então o C eh dá
+00:25:15.200 para ter na nas própriascoluna, por
+00:25:17.559 exemplo, não pode passar uma coisa de in
+00:25:21.559 progress para review sem
+00:25:24.480 eh aderir a certos critérios. Tu pode
+00:25:26.919 fazer isso. Então isso é importante na
+00:25:28.880 tua na tua fábrica.
+00:25:31.120 Mas o principal que eu vejo, pelo menos
+00:25:32.880 para mim, é um verificador dentro da
+00:25:35.320 implementação. Então a Tele6 Packlin tu
+00:25:37.799 implementa ela mesmo se verifica e
+00:25:39.799 depois no P request passar um review a
+00:25:42.720 mais. Essa é o que a gente tem. Só que
+00:25:44.880 cada empresa de certo de de tamanhos
+00:25:47.720 diferentes vai ter níveis diferentes de
+00:25:52.360 eh revisão que essa empresa vai querer
+00:25:54.240 colocar. E aí, gente, quando a gente
+00:25:57.159 pensa nisso, esse aqui são os
+00:25:58.919 fundamentos, tá?
+00:26:02.640 A gente pode pensar assim, pô, eu posso
+00:26:04.000 automatizar toda a minha empresa, eu
+00:26:06.000 posso automatizar um fluxo de um time ou
+00:26:08.960 eu posso automatizar, começar
+00:26:10.559 automatizando um fluxo específico. Ah,
+00:26:12.840 eu quero automatizar só triagem, por
+00:26:14.360 exemplo. Pô, tu vai lá, automatiza só
+00:26:16.679 triagem. E tu pode também, eh, o Felipe
+00:26:20.200 vai mostrar agora é o quê? Pô, eu quero
+00:26:23.039 ter no meu time um fluxo de triagem
+00:26:26.120 extremamente sólido e confiável, com
+00:26:28.440 contratos claros. Então, pô, se acontece
+00:26:30.919 uma coisa,
+00:26:33.120 é, eu sei, eu não vou, por exemplo, eu
+00:26:34.919 não, não vou usar o Grock Bot para ver
+00:26:36.279 se o Felipe vai explicar por eu quero
+00:26:38.440 ter um fluxo extremamente sólido ali,
+00:26:40.360 cara, dá para ter. Ou tu pode usar um
+00:26:43.240 bote que nem eu uso. Então, cada
+00:26:45.520 empresa, cada necessidade tem que ser
+00:26:47.440 avaliada. Esses são os princípios que
+00:26:49.200 vocês vão aplicar aplicar. O Felipe
+00:26:51.760 agora vai trazer um case dele, que é bem
+00:26:53.960 massa de um fluxo que ele usa
+00:26:55.799 específico. E depois a gente vai falar
+00:27:00.120 de, pô, será que é possível a gente
+00:27:03.279 criar um painel de controle para essa
+00:27:05.080 fábrica toda e garantir que a gente vê
+00:27:07.960 as coisas de ponta a ponta e automatiza
+00:27:09.679 mais o trabalho? Eu vou trazer isso para
+00:27:11.559 vocês. Eh, só deixa eu ver aqui se tem
+00:27:14.600 alguma pergunta que eu não vou cobrir
+00:27:15.640 que eu já respondo e a gente passa pro
+00:27:17.600 Felipe.
+00:27:22.360 Vamos ver.
+00:27:25.320 O Unblocked seria um hag plug play? Sim,
+00:27:27.720 exatamente. O unblocked é um hag plug
+00:27:29.720 gameplay, só que não só um hag, tá? Ele
+00:27:32.320 tem rankeamento. Então o que que é
+00:27:33.799 rankamento? Se tem um documento no
+00:27:35.840 Notion, uma tes que no gira e o code
+00:27:37.480 base no no GitHub, ele sabe dizer qual
+00:27:40.880 que é a regra mais nova. Então, se tu
+00:27:42.760 perguntar para ele, cara, qual que é o
+00:27:45.720 valor da assinatura da CLD Clube hoje? E
+00:27:48.440 esse valor mudou ao longo do tempo, ele
+00:27:50.440 sabe dizer qual que é o mais novo. Aí
+00:27:52.360 ele pega o slack também. Então, se a
+00:27:54.000 gente discutiu no slack que a gente vai
+00:27:55.200 mudar, ele vai dizer: &quot;Olha, o valor
+00:27:57.159 atual é tal, mas discutindo que vai
+00:27:59.000 mudar para tal&quot;. Isso é chato de fazer
+00:28:01.320 com rag. Não é só indexar o conteúdo,
+00:28:02.919 tem que ranquear, é um monte de coisa.
+00:28:04.799 Então, é bem interessante.
+00:28:09.640 A stack que eu usei para desenvolver o
+00:28:11.320 Willly é o Hermes, que é esse bote aqui,
+00:28:13.559 tá? Hermes, quem não conhece, Hermes
+00:28:16.279 agent,
+00:28:18.519 esse cara aqui. E ele é um processo que
+00:28:21.279 roda numa máquina com o agente, roda em
+00:28:23.600 cima do cloud code. Só que assim, gente,
+00:28:26.000 o que que vai acontecer nos próximos
+00:28:27.399 meses? Vocês não vão precisar rodar isso
+00:28:29.279 numa máquina, tá? Eh, o Grock já tem
+00:28:32.720 teams, acho que tá em beta. O da Open AI
+00:28:36.000 vai ter teams também. Então, todo mundo
+00:28:37.600 vai ter esse, vai ser só plugin play,
+00:28:39.039 esses agentes vem logo. Mas quem quiser
+00:28:41.120 já que nem nós botar um agora, o Herms é
+00:28:43.960 bem fácil, tá? Pega uma máquina, entra
+00:28:45.720 lá, instala ele, é muito rápido de
+00:28:47.080 fazer.
+00:28:51.240 Bom, as outras eu vou responder mais
+00:28:54.080 depois.
+00:28:57.559 Show. Felipe, quer mostrar teu case? E
+00:29:00.480 depois eu volto de novo.
+00:29:03.120 >> Boa.
+00:29:04.919 Eh, boa noite aí, pessoal. Quem não me
+00:29:08.080 conhece, eu sou o Felipe.
+00:29:10.600 Eh, eu sou Step na BHub.
+00:29:13.760 Faço algumas coisinhas aí também na WS,
+00:29:16.559 SpaceX
+00:29:18.159 aqui na Techlits Club. E eu queria só
+00:29:20.880 trazer para vocês aqui um exemplo de um
+00:29:22.880 conceito, tá?
+00:29:24.880 para vocês ali pegarem, eh,
+00:29:28.760 entenderem um pouquinho como funciona e
+00:29:31.200 adaptar aí no fluxo de vocês, tá? Não,
+00:29:33.399 não levem nada assim,
+00:29:36.000 pô, o que eu tô falando aqui é verdade,
+00:29:37.640 não é? É é a forma como eu uso, a forma
+00:29:40.640 como eu acredito que, que funciona. E
+00:29:43.399 queria dar aqui mostrar alguns exemplos
+00:29:45.519 para vocês. Eh,
+00:29:49.279 então, começando, eu acredito ali que o
+00:29:52.039 controle de uma fábrica agente, que ela
+00:29:53.880 tem que tá na fábrica e não na mão dos
+00:29:55.880 agentes. Então, a gente vai começar por
+00:29:58.320 aí. Por que que eu acredito nisso? Eh,
+00:30:01.960 vou dar um exemplo aí que o que Valdemar
+00:30:03.519 tá falando com relação ao Grockbot. Eh,
+00:30:06.840 peguei ali, fui fazendo vários
+00:30:09.120 experimentos, tá, pessoal? Eu gosto, sou
+00:30:10.880 bastante curioso, então eu gosto de
+00:30:12.440 testar as coisas e nada melhor do que a
+00:30:14.640 prática para validar, né? E eu tinha uma
+00:30:17.600 fábrica de software ali agêntica rodando
+00:30:21.240 só com os groptots. Então,
+00:30:24.360 eh, para quem não sabe, você consegue
+00:30:26.399 criar web hooks dos dos bots e o bot
+00:30:29.600 passa a responder eventos.
+00:30:31.401 >> [roncando]
+00:30:31.440 >> Então, eu conectei o o um bote de
+00:30:34.320 triagem a um aos meus alarmes da WS,
+00:30:38.679 ao board do do GitHub.
+00:30:41.760 E cada vez que caía ali um evento, o
+00:30:46.200 pote acordava, aí repassava a tarefa,
+00:30:48.600 tinha meio que uma equipe ali, um líder,
+00:30:52.000 eh um que fazia triagem, outro que
+00:30:53.840 ficava só observando os eventos. Então,
+00:30:55.919 quando chegava o evento, ele triava com
+00:30:57.440 GV ali e eliminava o ruído e passava pra
+00:31:00.840 frente. E quando tinha que fazer alguma
+00:31:03.279 execução, disparava um cloud agent ali
+00:31:05.159 no cursor. Eh, então não era o Grockbot
+00:31:08.159 que mexia no código, ele só fazia o
+00:31:09.639 dispet. Aí depois ele despachava,
+00:31:12.039 chamava o revisor para revisar, despa
+00:31:14.840 despachava um revisor lá no no Cloud
+00:31:17.159 Agent, enfim.
+00:31:19.399 Eh, num belo dia eu acordei e eu tinha
+00:31:22.320 tipo oito PRS eh aprovados, né? Só que
+00:31:26.320 dos oito, quatro era um código e quatro
+00:31:28.360 era revertendo o que foi feito nos
+00:31:29.840 outros quatro. Aí eu fui ver, fui
+00:31:32.159 debugar os botes ali, vi que, cara,
+00:31:34.320 virou uma bagunça, tipo, um bote começou
+00:31:36.639 a fazer coisa do outro, tinha um que que
+00:31:39.600 era o líder e já começou a fazer tudo
+00:31:41.480 sozinho. Enfim, virou uma bagunça.
+00:31:45.120 Então, eh, eu trouxe isso para uma
+00:31:48.240 camada ali de oito etapas, eh, de forma
+00:31:50.919 determinística, que que chega desde o
+00:31:53.360 evento até a entrega. Então ali no
+00:31:54.840 evento, igual o Paldermar acabou de
+00:31:56.440 explicar, é pouco importa da onde vai
+00:31:58.080 vir. Se é do Slack, se é do Linear, se é
+00:32:00.480 do GitHub, se é Pombo Correio, se é
+00:32:03.480 Grockbot, se é Chat GPT, qualquer lugar
+00:32:05.960 que chegar ali vai bater e vai começar a
+00:32:08.360 startar a fábrica, como se fosse uma
+00:32:10.120 linha de produção mesmo. E se vocês
+00:32:13.080 repararem bem, o agente ele só tá ali na
+00:32:15.399 quinta etapa. Até chegar nele, a fábrica
+00:32:19.200 decide se ela vai agir, quem vai
+00:32:21.600 executar, o que que vai receber.
+00:32:24.080 E depois do agente, a fábrica vai
+00:32:25.880 conferir o que voltou. Então assim, a
+00:32:27.320 execução tá ali no passo cinco. E isso é
+00:32:30.159 uma inversão do que geralmente a gente
+00:32:31.799 costuma ver, que é em geral o agente é
+00:32:34.559 que faz tudo e o o e o sistema em volta
+00:32:38.639 é o resto. E na verdade aqui é o sistema
+00:32:42.120 é a fábrica e o agente é só um prestador
+00:32:44.639 de serviço dessa fábrica. Ele tem o
+00:32:46.519 contrato, a função dele. Deu 6 horas da
+00:32:49.279 tarde, ele pega as coisas dele, ó, vai
+00:32:50.960 embora. Não precisa prestar conta ali
+00:32:53.120 com o patrão. Então, eh, é isso. Então,
+00:32:58.080 ali tem oito etapas e é o evento chegou.
+00:33:01.120 Eu vou explicar cada uma eh para vocês
+00:33:03.480 ali, mas basicamente chegou um evento,
+00:33:06.559 eu consigo disparar até mesmo com
+00:33:08.120 Grockbot, mas a partir desse momento o
+00:33:09.960 Grockbot não faz mais nada. Ele recebe
+00:33:12.200 notificações de cada as etapas que tem
+00:33:14.000 ali, de como tá o andamento da fábrica,
+00:33:17.000 mas ele não consegue passar nada pro
+00:33:18.760 agente, não consegue mudar nada de
+00:33:20.360 entrada, roteamento, contrato, ele não
+00:33:22.000 faz nada, ele só observa.
+00:33:25.200 Então, começando pelo evento ali, que é
+00:33:27.240 o quem ativa a fábrica, então pode ser
+00:33:29.200 para uma IS no GitHub, no Lineer, num
+00:33:31.720 monitoramento da WS. Então ali eu deixei
+00:33:34.639 um exemplo ali de de do SNS que se um
+00:33:37.039 alarme cruzar o limear que tá
+00:33:38.519 configurado, ele vai disparar pra
+00:33:41.039 fábrica. Então repara ali que o a
+00:33:43.639 mensagem ele é um um Jason dentro de
+00:33:45.600 outro Jason. Então o intake ele vai
+00:33:48.240 desembrulhar isso e vai avaliar, vai
+00:33:51.679 passar o Jeb ali para ver se não tem
+00:33:53.240 ruído e validar se os campos estão tudos
+00:33:57.039 certinhos. Então ali tem uma segunda
+00:33:59.600 porta que é pro operador. Então se eu
+00:34:03.200 quiser fazer algo manual eu vou fazer.
+00:34:05.639 Como Valdermá disse, a gente trabalha em
+00:34:07.240 conjunto na fábrica, usando a mesma
+00:34:08.719 infraestrutura
+00:34:10.320 e tudo passa pelo mesmo caminho, as
+00:34:12.119 mesmas regras, eh
+00:34:15.399 a as mesmas etapas, as mesmas travas. Eu
+00:34:18.679 consigo eh desarmar a fábrica ali caso
+00:34:22.359 tenha algum problema. E não existe, por
+00:34:24.719 exemplo, duas execuções paraa mesma iso.
+00:34:26.359 Ele já faz a deduplicação ali, já vê se
+00:34:29.760 tem a ISO rodando. Se tiver, ele vai
+00:34:31.760 parar.
+00:34:33.280 E assim, o nome da execução tem que ser
+00:34:36.399 determin para dar potência, né, de
+00:34:38.480 graça, para não precisar
+00:34:40.719 eh nenhuma lógica complexa. Então ele
+00:34:42.679 vai ver, se chegar duas vezes a segunda
+00:34:44.280 tentativa, ele vai bloquear.
+00:34:47.520 Então ali no intake ele tem seis guardas
+00:34:50.918 ali que e a ordem importa porque a gente
+00:34:53.480 começa sempre pelas mais baratas
+00:34:56.119 antes de chegar nas mais caras. E olha
+00:34:57.839 que ele é mais caro quando eu falo ali é
+00:34:59.160 o Jeevó que o Jev é uma mxaria, mas
+00:35:00.880 mesmo assim vão ter economizar até os
+00:35:03.760 centavos. Então, se o tipo for errado, a
+00:35:06.400 fábrica tiver desligada, a mensagem foi
+00:35:08.240 repetida, se tiver batido o limite da
+00:35:10.040 fábrica por hora, que você pode
+00:35:11.280 configurar, recomendo para não virar uma
+00:35:13.280 bagunça que você não consegue
+00:35:14.480 acompanhar.
+00:35:16.240 E depois disso a gente grava a chamada
+00:35:17.880 ao Jeev. Então, o Jeb vai entrar com uma
+00:35:19.720 pergunta de múltipla escolha ali.
+00:35:21.839 Pessoal que tá acostumado a mexer com
+00:35:23.079 ele ali sabe como que funciona. Então
+00:35:24.599 ele vai perguntar se é ruído, se é
+00:35:25.880 sinal, se a resposta tá tipada e tal.
+00:35:28.680 mandou, interpretou, o modelo veio, a
+00:35:32.440 resposta e aí a gente toca o barco de
+00:35:34.920 acordo com ela. E se o JEB es tiver fora
+00:35:38.880 do ar, a fábrica ela vai tratar como
+00:35:42.920 sinal e vai abrir a, então ele vai parar
+00:35:45.839 a investigação, ele não vai parar o a
+00:35:47.760 fábrica em si. Então, pode ser que o Jeb
+00:35:50.560 não responda e aí a fábrica tem que
+00:35:52.440 seguir
+00:35:56.000 eh a fábrica em si ali. Eh, nesse
+00:36:00.280 exemplo aqui, nesse conceito, eu usei o
+00:36:01.720 step functions da WS. Para quem não
+00:36:04.440 conhece, ele é uma máquina de estados.
+00:36:06.720 Então ali, como o fluxo tem uma espera
+00:36:09.200 longa e ele precisa de um histórico de
+00:36:11.000 forma auditável, eh, eu preferi usar
+00:36:13.599 step functions do que construir algo,
+00:36:15.200 como é um fluxo simples, mas caso for
+00:36:17.880 fazer alguma coisa pra empresa e tal, a
+00:36:19.560 gente tem outras coisas rodando, é você
+00:36:22.000 fazer com workers, lambda, com a ledger,
+00:36:25.040 enfim, você criar o seu fluxo ali.
+00:36:27.720 Então, como que é a espera, eu tenho que
+00:36:29.160 ficar esperando um retorno, eu espero
+00:36:30.720 sem custo. É, e o custo é irrisório ali
+00:36:33.720 dele rodando, então ele fica pausado,
+00:36:35.760 tem histórico, tem um fluxo explícito
+00:36:37.720 ali, quantidade de timeout por etapa,
+00:36:40.280 enfim, para quem já trabalhou com step
+00:36:42.000 funí.
+00:36:44.079 E
+00:36:46.079 se vocês verem ali, deixa eu olhar no
+00:36:48.440 slide aqui, não tem retry nem cat porque
+00:36:52.040 é de propósito, porque se o agente
+00:36:53.760 estourar o time out, a execução vai
+00:36:55.760 falhar.
+00:36:57.400 Então assim, dar retry cego em em
+00:37:00.880 agentes de de IA é queimar dinheiro à
+00:37:04.119 toa, entendeu? Às vezes pode ter um
+00:37:06.319 problema ali na execução, então já paro
+00:37:08.359 ali para não ficar mandando coisa que
+00:37:11.319 ele não vai resolver. Isso aconteceu
+00:37:13.520 várias vezes no com Grockbot, tá?
+00:37:16.319 Grockbot ficou preso lá num num problema
+00:37:19.560 e ele ficava disparando a gente e
+00:37:22.119 gastando minha minha cota de uso lá.
+00:37:25.000 Então ali no no se vocês olharem ali no
+00:37:27.520 slide à direita tem o roteador que que é
+00:37:31.319 quem executa. Aí eu usei de exemplo aqui
+00:37:33.680 de novo. Vocês podem usar o que vocês
+00:37:35.920 quiserem. Aqui tô usando o cursor e o
+00:37:37.480 Kiro de exemplo, só para vocês verem o
+00:37:39.000 balanceamento entre os dois.
+00:37:41.319 Eh, funcionam de forma diferente. O
+00:37:43.200 curso é muito mais fácil porque eu bato
+00:37:44.720 lá direto no end point deles, subo um
+00:37:46.480 cloud agent. Beleza, no Kiro já tem que
+00:37:48.920 subir uma lambda, rodar o Kiro Cel para
+00:37:50.960 eu poder disparar um cloud agent, dá um
+00:37:53.640 pouquinho mais de trabalho. E como eu
+00:37:55.720 tava com tinha ganhar alguns créditos do
+00:37:57.560 Kiro, eu resolvi testar e usar. E é bem
+00:38:01.480 simples o roteador. Então, tem um modo
+00:38:04.839 manual, tem um modo automático e no
+00:38:07.920 automático vence quem tem mais cota
+00:38:09.520 livre. E se tiver empate, ele vai pro
+00:38:12.040 Kiro, porque era a lógica que eu tinha,
+00:38:14.040 porque eu tava com bastante tinha
+00:38:15.319 ganhado uns bônus lá e tava sobrando,
+00:38:17.160 então vai para ele. E tem o disjuntor,
+00:38:19.839 né? Tem um secret breaker ali, se der
+00:38:21.720 time out, erro 500 ou 429, ele tira o
+00:38:24.880 executor da fila e para, porque é um
+00:38:26.920 erro que não tem o que fazer, né? Não
+00:38:29.319 adianta você ficar batendo que não vai
+00:38:30.680 resolver.
+00:38:33.200 Ah, aqui vamos ver a tarefa. A tarefa em
+00:38:35.760 si, ela sai com contrato e com token.
+00:38:39.000 Então, é o que eu recomendo. Já falei na
+00:38:41.200 última live e vem trazendo isso há algum
+00:38:44.960 tempo, que é a questão de, cara, um
+00:38:46.839 contrato Jason ali bem amarradinho,
+00:38:49.280 validado, é bem mais fácil você
+00:38:51.920 trabalhar com com agente Ai, ao invés de
+00:38:55.200 prosa solta. Então o contrato é esse. O
+00:38:58.839 agente ele não recebe o repositório
+00:39:00.280 inteiro, nenhum promp gigante. Ele vai
+00:39:02.079 receber uma etapa, a lista de campos que
+00:39:03.800 ele precisa devolver e para onde ele vai
+00:39:05.680 responder.
+00:39:07.240 O be ali, o token é de uso único e
+00:39:09.640 amarrado aquela tarefa. Então cada papel
+00:39:12.680 vai ter sua chave. O o a etapa de
+00:39:16.119 triagem, que no caso é o agente que eu
+00:39:18.280 vou disparar, né? Ele só consegue
+00:39:20.040 responder o diagnóstico
+00:39:22.200 e o chip ele consegue só responder ali
+00:39:24.680 quando o PR tá aberto e o review só o
+00:39:27.480 evento de review
+00:39:29.640 do veredito ali do review, né? Então,
+00:39:32.839 cada um não, um não atravessa o que o
+00:39:34.960 outro tá fazendo, justamente para evitar
+00:39:36.920 acúmulo de funções ali. E o executor
+00:39:39.599 padrão, como eu falei, é o cursor cloud
+00:39:41.480 agent com post, disparei, ele vai subir
+00:39:45.560 lá. Ou então aquela alternativa do Kiro
+00:39:47.480 ali, mas aí eu preciso subir uma lambda
+00:39:48.839 e rodar o Cai e disparar ele
+00:39:53.359 pela lâmbida.
+00:39:55.880 Então, com o callback ali, ele tem ele
+00:39:58.599 tem seis portões. Eh,
+00:40:01.839 o agente ele vai responder por um único,
+00:40:04.440 uma única porta e a porta tem os a fila,
+00:40:07.640 né, que é o better, a etapa permitida
+00:40:10.880 e para aquela chave, né, se é realmente
+00:40:12.680 aquela daquela tesque se a tesque
+00:40:14.880 existe, se o token ainda não foi usado,
+00:40:16.599 o esquema. Então isso aí, então ele dá o
+00:40:18.960 sucesso. E o quarto ali, eh, ele
+00:40:23.527 [roncando] evita que, por exemplo, o
+00:40:25.160 replay do mesmo token, ele vai dar 409 e
+00:40:28.280 nada vai acontecer. Então, se alguém ou
+00:40:30.000 algum agente confuso reenviar a mesma
+00:40:32.240 resposta, a máquina não vai pra frente
+00:40:33.920 de novo, que pode acontecer dele tentar
+00:40:36.720 repetir o a tesque ou travar alguma
+00:40:39.319 coisa na infra lá. hoje em dia toda hora
+00:40:42.200 fale alguma coisa, né, em relação a IA
+00:40:45.319 ali, principalmente ali no no curso, de
+00:40:48.240 vez quando dá um dá umas travadinhas,
+00:40:49.960 então ela não vai repetir a tarefa.
+00:40:52.720 E a regra ali de de que envolve tudo,
+00:40:55.760 que é o deploy result, o rollback, as
+00:40:58.079 provas, que só a fábrica que vai
+00:40:59.800 escrever. O agente ele nunca vai
+00:41:01.960 conseguir fabricar um resultado deploy,
+00:41:05.000 então ele não consegue enfiar lá que que
+00:41:09.040 cara o deploy foi com sucesso, o sei
+00:41:11.480 passou, os testes passaram. Não, porque
+00:41:13.720 de novo isso já aconteceu.
+00:41:16.240 Eh, então a gente vai aprendendo e a
+00:41:18.359 gente vai ajustando ali o se vocês forem
+00:41:21.200 parar para ver isso é meio que um
+00:41:22.680 harness, né? [roncando]
+00:41:24.480 que a gente já vem falando aí há tempos
+00:41:27.359 na validação ali, que é o contrato que e
+00:41:30.839 a fábrica vai recusar se tiver fora do
+00:41:32.839 contrato. Então ali deixei um exemplo
+00:41:34.560 ali de uma resposta recusada e repare
+00:41:37.240 que ela parece tipo é razoável para um
+00:41:39.520 humano que estiver com pressa ali, né?
+00:41:41.760 Tem causa, tem risco, mas por exemplo
+00:41:43.960 rot é bug e a parte de evidência tá
+00:41:47.000 vazia.
+00:41:48.680 Então assim,
+00:41:50.920 com o contratipado você consegue
+00:41:53.079 validar, pô, isso nem existe no Enum,
+00:41:55.560 então não aceita. Então se o a a a causa
+00:42:00.040 for menos de, sei lá, aqui eu coloquei
+00:42:02.680 um exemplo de 20 caracteres, mas pode
+00:42:04.920 ser mais, não aceita. Então isso obriga
+00:42:07.839 o agente a enviar de forma completa ali,
+00:42:10.839 porque ele pode até não respeitar da
+00:42:12.560 primeira vez, mas se tiver um retry, ele
+00:42:14.480 vai respeitar das próximas que ele vai,
+00:42:16.040 pô, não deu certo, aí ele vai ajustar e
+00:42:18.040 enviar, [roncando] evita ali qualquer
+00:42:19.960 tipo de alucinação. Então tem sete
+00:42:22.880 regras conferidas ali campo a campo. uma
+00:42:26.400 falha é é
+00:42:28.640 pulada, porque o, por exemplo, se o
+00:42:30.000 campo não vier e dá o erro de esquema
+00:42:33.280 ali e a execução para por ali.
+00:42:37.040 E ele ele mostrando como é tem um
+00:42:39.160 exemplo ali de como que é uma resposta,
+00:42:40.720 né, eh, que é aceita hoje. E no na parte
+00:42:44.920 do JEV, o Jev ele só vai anexar a
+00:42:46.520 opinião dele. Por enquanto a máquina não
+00:42:48.680 decide em cima dela. Então ali é só pra
+00:42:50.760 gente ter um limear ali e ver depois
+00:42:54.280 utilizar esse dado para configurar da
+00:42:57.280 melhor forma, mas você pode colocar o
+00:42:59.319 Jeev também nesse fluxo aí, não tem
+00:43:01.480 problema.
+00:43:03.960 O juiz, cara, eu usei a skill que
+00:43:06.599 mandamos aqui no chat agorinha. É, eu
+00:43:09.480 escrevi essa skill porque eu tava
+00:43:10.680 cansado de de ficar penando com code
+00:43:13.000 review, loop infinito e eu usei a os
+00:43:16.280 mesmos ensinamentos dessa skill para
+00:43:18.520 esse juiz aqui, que é ele devolver o
+00:43:21.839 contrato, os finds em Jason ou
+00:43:24.359 aprovação. Então ele ele só a máquina só
+00:43:27.559 vai ler dois campos, que é o veredito e
+00:43:29.960 o rest do commit e os findings são para
+00:43:33.640 o agente que vai corrigir se tiver
+00:43:35.359 correção. E por que que eu vejo o R
+00:43:37.760 hash? Porque ele é o detalhe que
+00:43:40.000 realmente ali trava a correção de
+00:43:43.559 verdade ali. Porque, por exemplo, o
+00:43:46.400 review ele é feito em cima de um commit.
+00:43:48.520 Se tiver alguma mudança na naquela
+00:43:50.160 branch, ele não pode aprovar sem revisar
+00:43:53.599 novamente. Então, por isso que o o hash
+00:43:56.920 é importante, porque ele valida se
+00:43:58.720 realmente o approve é para aquele hash
+00:44:00.920 ali. [roncando]
+00:44:02.400 Então, se alguém tiver empurrado outro
+00:44:03.920 commit no brand depois do review, o R
+00:44:06.640 has não vai bater e o gate não vai
+00:44:08.280 abrir. Então, se tiver mudanças,
+00:44:10.960 requisição de mudanças, ele vai voltar
+00:44:12.440 ao agente de PR, de PR ou PR, tipo
+00:44:16.640 request ali, né? Então você pega ali,
+00:44:19.440 por exemplo, ele vai ter o feedback. Eh,
+00:44:22.800 e assim é importante você ter um limite
+00:44:25.200 aqui. A gente usa o limite três vezes
+00:44:27.359 para evitar loops infinitos ali. Aí você
+00:44:29.800 configura da forma que você achar
+00:44:31.079 melhor. Coloca também para caso, por
+00:44:33.480 exemplo, avisar no Grockbot, pô, precisa
+00:44:35.359 de uma ação humana. Avisar no Teams,
+00:44:36.920 avisar no Liner, avisar no no onde quer
+00:44:40.680 que seja.
+00:44:42.160 E se ele rejeitar ou estourar as três,
+00:44:44.359 ele termina a execução e morreu ali. Ou
+00:44:49.440 de novo fica esperando uma uma ação
+00:44:53.040 humana. [roncando]
+00:44:55.160 Depois que que é feito ali o merge e o
+00:44:57.400 deploy e e isso feito pela fábrica ali
+00:45:00.480 com GitHub app, então só ela consegue
+00:45:03.040 fazer o agente ele não consegue empurrar
+00:45:05.640 de qualquer jeito. O o Merge ele vai
+00:45:08.119 esperar um humano.
+00:45:10.319 Se você pedir, configurar, o merge vai
+00:45:13.880 te esperar ir lá, pô, quero revisar.
+00:45:15.599 Senão você consegue colocar e adicionar
+00:45:18.160 o shave para avaliar ali se é, pô, é
+00:45:20.440 irreversível ou não é. Se se não for
+00:45:23.040 algo irreversível, aceita um limear de
+00:45:25.119 de quanto para ser aprovado
+00:45:26.520 automaticamente.
+00:45:28.160 Aí é importante ter o próximo passo, que
+00:45:30.319 é a medição. Então assim, depois que
+00:45:33.200 tiver um lock ali de deploy, eh, com o
+00:45:37.640 hash exato ali, né, e gravado esse hash
+00:45:41.240 para ficar, hoje a gente grava ele ali
+00:45:43.520 no SSM, então para para bater, para ver
+00:45:46.280 se tá tudo certo. Eh, se vocês forem
+00:45:48.640 ver, é muita burocracia, né? Mas é o
+00:45:51.686 [roncando] que faz o os agentes entrarem
+00:45:53.359 na linha ali. Então o deploy é um
+00:45:56.200 workflow, então vai voltar com callback
+00:45:58.480 e de novo vai chamar, vai avisar o que
+00:46:00.960 for preciso que vocês conectarem. Deploy
+00:46:03.400 gate ali, ele vai comparar.
+00:46:06.880 E é isso. Eh, quem implantou ali nunca
+00:46:09.520 vai dizer se deu certo ou não. O agente
+00:46:11.280 ele não tem a palavra final. Quem vai
+00:46:13.400 conferir é a fábrica. Então, entenda ali
+00:46:15.839 como se passasse um supervisor ali para
+00:46:17.559 conferir a qualidade do que foi feita. E
+00:46:20.400 beleza, depois de subir, a mesma fábrica
+00:46:23.359 vai medir produção por conta própria.
+00:46:25.839 Tem os limares configurados e caso dê
+00:46:30.440 algum problema,
+00:46:32.520 ela vai fazer um rollback. E aí, fazendo
+00:46:35.640 um rollback, ela primeiro ela desfaz a o
+00:46:37.760 que tá rodando em produção e depois ela
+00:46:39.440 faz o revert no commit. Mas se passar,
+00:46:42.200 ela salva ali como o último commit que
+00:46:44.480 deu tudo certo, salva o hash dele pra
+00:46:47.359 gente usar de de base como a última vez
+00:46:50.079 que o sistema tava estável ali, né?
+00:46:52.680 Então aqui no HBEC ele vai listar as
+00:46:56.520 violações e tal ali. Só um exemplo de de
+00:47:00.000 que eu deixei aqui para vocês verem do
+00:47:01.400 que tá configurado lá dos limares. Aí é
+00:47:03.480 os alarmes que vocês configuram lá.
+00:47:06.440 depende da lógica de vocês. E é isso.
+00:47:10.359 Ele não vai ser reimplantado porque a
+00:47:12.240 produção já tá ali. Então ele só faz o
+00:47:14.559 revert para acabar com o problema e
+00:47:18.920 volta ali depois para desfazer o que que
+00:47:21.000 foi feito no código. Então assim, como
+00:47:24.520 deu o exemplo do Grockbot lá no começo,
+00:47:26.319 ele pegou
+00:47:28.040 cara de quatro PRs, ele reverteu os
+00:47:29.960 quatro. Só que aí você ia analisar,
+00:47:32.440 cara, era virou uma bagunça, entendeu?
+00:47:34.599 por mais que o fluxo tivesse certo, eh,
+00:47:37.720 com instruções certas, com harness certo
+00:47:40.960 lá no Cloud Ag, gente, para não deixar
+00:47:42.760 fazer cagada lá, mas aqui o problema foi
+00:47:46.240 o Grockbot, ele não tem uma trava ali
+00:47:48.640 que impeça ele de não seguir as regras
+00:47:51.319 que tão escritas para ele. E hoje, da
+00:47:55.760 forma como é, não tem muito o que fazer.
+00:47:58.720 Então aqui finalizando aí para vocês, é
+00:48:01.880 isso que a prosa ela vai pedir, mas quem
+00:48:04.520 vai garantir é o contrato. Então
+00:48:07.559 instrução em linguagem natural sempre
+00:48:09.319 vai ser um pedido e o pedido e o pedido
+00:48:11.839 é o agente pode atender ou pode resolver
+00:48:14.359 não atender. E eu tenho visto muitos
+00:48:16.319 pedidos meus aqui não serem atendidos.
+00:48:20.160 Então o que mantém na linha aí o
+00:48:23.640 funcionamento é isso. E de novo é um
+00:48:26.319 harness, né? Então o que sustenta a
+00:48:28.960 fábrica não é um prompt melhor, vai ser
+00:48:30.520 um agente que só consegue agir dentro
+00:48:32.200 desse contrato que a fábrica confere. E
+00:48:35.119 é isso. Não sei se eu demorei demais aí,
+00:48:38.240 tentei falar mais não tá
+00:48:39.599 >> rápido.
+00:48:40.960 >> Massa. O pessoal tá perguntando se tem
+00:48:42.240 repositório. Cara, não tem porque esse
+00:48:44.240 aí é do é do teu trabalho, né? Então
+00:48:46.240 >> não, isso aqui foi, cara, foi foi um
+00:48:47.800 experimento que eu fiz. Vemar. Depois eu
+00:48:49.319 posso até eh disponibilizar pro pessoal
+00:48:51.599 do trabalho é outro. do trabalho, aí eu
+00:48:53.280 já não tenho acoplado a nenhum serviço,
+00:48:56.400 eh, não tenho acoplado a nenhum
+00:48:58.960 provider. Então,
+00:49:01.000 >> boa. Eu quis trazer esse exemplo do
+00:49:03.359 Felipe porque uma das coisas que quando
+00:49:05.319 a gente pensa em fábrica de software,
+00:49:06.880 esse é um exemplo bem avançado, tá
+00:49:08.079 gente? Na maioria das coisas, vocês
+00:49:09.880 verem no meu exemplo ali, eu uso um
+00:49:12.480 agente que orquestra as coisas, só que
+00:49:14.079 assim, eh, o agente tu tem que tá
+00:49:17.559 cuidando, ele não tem um contrato, por
+00:49:19.240 exemplo, ah, isso aqui que eu espero de
+00:49:21.040 um output quando tu mover uma coisa de
+00:49:23.480 triagem para tudo, por exemplo. Então,
+00:49:25.720 tem várias coisas que podem acontecer
+00:49:27.520 ali, só que pro meu fluxo tá OK, mas,
+00:49:31.559 pô, num fluxo de triagem de incidentes,
+00:49:36.559 por exemplo, onde, pô, ele tem que fazer
+00:49:38.000 uma triagem por vez, se vi, sei lá, 200
+00:49:40.920 alertas, ao mesmo tempo ele tem que
+00:49:42.319 conseguir, cara, fazer só um e desse um,
+00:49:44.799 ele tem que tentar fazer o fix. Então,
+00:49:46.920 tipo, a fábrica ela é
+00:49:51.359 rela ela é um reflexo do fluxo que tu tá
+00:49:54.799 fazendo aí. Esse caso do Felipe é o
+00:49:56.440 fluxo específico de triagem. E aí tu vai
+00:49:59.400 encaixando, né? Pô, pro meu fluxo de
+00:50:01.079 desenvolvimento eu não preciso de algo
+00:50:02.440 tão avançado. Agora essa parte do fluxo
+00:50:04.920 eu preciso. Aí tu vai fazer algo mais
+00:50:07.839 avançado. E que eu acho interessante que
+00:50:10.000 tu trouxe é a questão do GEV, né? O GEV
+00:50:12.799 é muito bom para contratos, tá? Então,
+00:50:15.960 eh, quando vocês tiverem que usar
+00:50:17.440 coisas,
+00:50:19.079 além de ser mais barato, né, ele também
+00:50:21.680 é muito bom para essa parte de validação
+00:50:23.480 e tal. Então, é outra coisa
+00:50:25.599 interessante. A gente vai mandar a
+00:50:27.079 gravação, vai mandar os slides. Pode
+00:50:29.040 falar, Felipe.
+00:50:30.079 >> Não, não. Eu falei, isso é bacana mesmo.
+00:50:31.480 O Jeb é e o e o bom é que é barato e tem
+00:50:34.119 uma assertividade até alta ali, se tiver
+00:50:36.839 tudo certinho, sabe? Aí você tem que
+00:50:39.240 saber como mandar, não entrar em
+00:50:40.680 contradição nas coisas que você manda
+00:50:42.520 para ele. Então é bem bem massa aí.
+00:50:46.599 Massa. Eh, tu tem aquele desenho que tu
+00:50:49.240 mandou no WhatsApp que era de cima da
+00:50:51.119 fábrica assim, só pro pessoal perguntar
+00:50:52.920 o que que tu usou para construir. Eh,
+00:50:55.839 comparando, gente, com o que eu mostrei,
+00:50:57.440 vocês viram que eu uso Slack, o o Linear
+00:51:01.280 e um agente.
+00:51:03.079 >> O Felipe usou a maioria da stack da WS.
+00:51:05.520 Por quê? O intake vem de um alerta.
+00:51:09.040 Então esse alerta inicia uma step
+00:51:10.760 function. Então pensa que é o fluxo na
+00:51:14.000 que tá na WS, né? Essa step function aí
+00:51:17.520 chamou o agente que o agente dele tá no
+00:51:20.480 ele falou ali podia ser o Kirou alguma
+00:51:22.240 coisa. No meu caso é o Willly, né? Então
+00:51:24.720 pensem assim no meu caso é o Will dele
+00:51:26.799 chama um agente local.
+00:51:30.119 >> O cara mas mesmo foi só para avançar ali
+00:51:33.160 o sabe não precisar construir muita
+00:51:35.079 coisa. Porque a da na Bub já é
+00:51:38.319 totalmente diferente. Aí fui construí
+00:51:39.839 tudo do zero, sem acoplar nada e de
+00:51:43.640 forma que encaixe em qualquer produto e
+00:51:46.920 modular de forma que a pessoa que tiver
+00:51:49.200 ali quer colocar no produto dela, ela
+00:51:50.920 entenda o cenário dela e use o que for
+00:51:54.440 eh que servir para ela ali, né? Eu tô
+00:51:57.920 procurando a imagem aqui. Vou pera aí.
+00:52:01.680 Se tiver alguma pergunta aí para vocês.
+00:52:04.880 >> É, cara, a principal era essa. Do que
+00:52:06.599 que tu construiu? Quer ver se tu tinha a
+00:52:09.200 imagem?
+00:52:10.440 >> Qualquer coisa depois eu mando no chat
+00:52:11.799 aqui para não atrapalhar aí.
+00:52:14.440 >> Ó, o Vinícius Santanas perguntou: &quot;E
+00:52:16.079 algumas tescas pequenas, não é muito
+00:52:17.760 overgener?&quot; Claro, não. Certamente. Como
+00:52:19.839 eu falei, esse é um caso complexo, um
+00:52:22.960 quase avançado, onde tu quer o máximo de
+00:52:25.280 segurança e contratos rígidos. Na
+00:52:27.680 maioria das vezes vai usar um agente,
+00:52:29.359 vai ser tranquilo. Só que o Felipe
+00:52:30.880 falou: &quot;Pô, no caso dele, ele tentou
+00:52:32.599 usar tipo um Grock bot tal que é muito
+00:52:34.280 solto&quot;. Aí tem aqueles problemas de
+00:52:36.319 estar sempre corrigindo. Então,
+00:52:37.720 exemplos, tá? Queria trazer para vocês.
+00:52:40.040 Pensar trouxe dois exemplos, trouxe o
+00:52:41.160 meu exemplo e trouxe o exemplo, Felipe.
+00:52:42.359 Pode falar, Felipe.
+00:52:43.119 >> Sim. Aí, mas pensa, pensa comigo aqui.
+00:52:44.799 É, cara, tem um incidente em produção
+00:52:47.599 3:30 da manhã, não tem ninguém para ver.
+00:52:49.839 Claro, se não for, dependendo do tamanho
+00:52:52.280 da empresa, cara, não vai ter ninguém de
+00:52:53.760 plantão ali para ver, né? Então você
+00:52:56.280 automatiza a resposta ali ao incidente e
+00:52:59.440 dependendo do que que for, cara, ele vai
+00:53:02.240 colocar algo em produção para acessar
+00:53:03.960 aquele incidente. Então ele tem que ter
+00:53:05.880 um fluxo ali muito bem amarrado
+00:53:09.480 para não ficar pior do que tava, né?
+00:53:13.400 Então é isso, ele verifica ali, por
+00:53:16.119 exemplo, no começo, cara, tá quanto o
+00:53:19.040 limear tá batendo aqui, vamos supor, o
+00:53:20.920 banco tá com muitas conexões e depois
+00:53:23.240 ele vai avaliar se diminuiu ali ou não.
+00:53:25.640 Se não diminuiu, ele volta. Então, na
+00:53:28.200 pior das hipóteses, você vai acordar e
+00:53:31.319 vai est igual como se você tivesse visto
+00:53:33.119 3 horas da manhã ali, entendeu? Agora
+00:53:35.319 com Grock Bot não, com o Grockbot como
+00:53:37.359 tava solto, cara, virou uma bagunça de
+00:53:40.799 de correção e de reversão ali que aí
+00:53:43.799 você para entender o que que tinha
+00:53:46.040 acontecido. Não, mas assim, de novo,
+00:53:49.040 tudo experiência, tá gente? Isso aqui
+00:53:50.559 não foi colocado em nenhum coisa
+00:53:52.559 crítico, nenhum fluxo, sabe? A gente
+00:53:55.280 precisa testar para validar. Então, a
+00:53:58.079 gente testa aqui para poder falar para
+00:53:59.680 vocês o que dá certo e o que que não dá.
+00:54:04.079 Boa.
+00:54:05.599 Show. Vê se eu acha imagem depois,
+00:54:06.839 Felipe, para compartilhar com a galera.
+00:54:07.960 >> Vou procurar aqui.
+00:54:11.240 >> Show. Gente, o que eu quero mostrar para
+00:54:13.240 vocês agora é o seguinte. A gente passou
+00:54:15.680 pelo caso da minha fábrica, a gente
+00:54:17.079 passou por um exemplo ali de fábrica
+00:54:19.640 mais rígida, rígida do do Felipe para
+00:54:22.280 principalmente para casas de alertas e
+00:54:23.599 tal, casas mais rígidas. E agora o que
+00:54:25.720 eu quero trazer para vocês é a coisa que
+00:54:27.280 o William Fernandes, que é também aqui
+00:54:29.240 do nosso lab de Arate Tech Clube, ele
+00:54:31.880 trabalha no PayPal, é um parceiro nosso
+00:54:35.160 e ele infelizmente tá com COVID hoje, tá
+00:54:37.040 bem ruim, mas e parou para gravar uma
+00:54:39.480 demo para nós, o produto que ele vem
+00:54:40.799 trabalhando. Infelizmente eu não consigo
+00:54:43.160 mostrar aqui porque eu tava focando em
+00:54:45.359 outras coisas, ele vem tocando esse esse
+00:54:47.359 produto que ele vem pesquisando. Mas
+00:54:49.359 qual que é a ideia? Vocês notaram que
+00:54:52.000 tanto a minha fábrica, que é um do fluxo
+00:54:54.240 desenvolvimento do Felipe ali, falta o
+00:54:57.200 quê? Falta uma uma maneira de tu
+00:54:58.920 controlar a fábrica. Tu tem um painel de
+00:55:00.799 controle e tu também conseguir ver esses
+00:55:03.520 fluxos e dizer: &quot;Ah, a minha fábrica tem
+00:55:06.799 uma triagem, um backlog, um in progress,
+00:55:10.760 um review.&quot; E essas são as regras de
+00:55:13.079 cada
+00:55:14.799 um desses dessas colunas. Esse é o custo
+00:55:17.559 de cada feature que passa por ela. Essa
+00:55:20.000 é as skills que os agentes têm que usar
+00:55:21.520 em cada coluna. Esses são os agentes que
+00:55:24.000 devem ser usados a cada etapa. Todo esse
+00:55:26.480 tipo de configuração hoje, se vocês
+00:55:28.160 olharem na minha fábrica ali que eu
+00:55:29.720 mostrei para vocês, tá espalhado, né?
+00:55:31.920 Então tem um Hermes, tá numa máquina,
+00:55:34.119 tem o Lineer lá, não tem um lugar
+00:55:35.960 central, tá? A gente tá começando a
+00:55:37.599 desenvolver um projeto que o William tá
+00:55:39.480 puxando, que é esse aqui, ó, que eu vou
+00:55:41.240 mostrar para vocês. Vou mostrar dois
+00:55:42.720 vídeos que o William deixou e aí a gente
+00:55:45.440 volta e comenta sobre ele. Eu vou
+00:55:46.920 explicar porquê, que é realmente a ideia
+00:55:51.160 da gente
+00:55:53.640 aqui da gente ter um painel de controle
+00:55:56.720 da fábrica, tá? Vocês conseguem ver esse
+00:55:58.640 vídeo aí?
+00:56:00.319 Tá na tá na tela de vocês aí? Tá show.
+00:56:04.000 Eu vou dar o play. Ele tem algumas notas
+00:56:05.920 embaixo, tá? Prestem atenção na nota ali
+00:56:07.520 que é importante. Eu vou aumentar para
+00:56:09.440 1.5
+00:56:11.039 e aí depois eu vou parar. Eu a gente vai
+00:56:13.480 ver isso daqui rapidinho.
+00:56:15.599 Leiam ali embaixo. Então ele tá criando
+00:56:17.640 uma iso.
+00:56:31.760 Essa eixo vai para tud.
+00:56:34.760 Qual o a gente decide pegar?
+00:56:46.599 Tem algumas regras ali. E aqui tem
+00:56:48.200 workflow. Essa parte aqui é importante,
+00:56:49.920 ó. Pensa o seguinte, o que que a gente
+00:56:52.559 tá fazendo aqui? Falei bastante de
+00:56:54.079 fábrica, mas o que a gente tá tentando
+00:56:56.400 criar é um painel de controle pra
+00:57:00.079 fábrica. Isso aqui não é um software.
+00:57:01.440 Isso aqui não é um hardness, tá? Não é
+00:57:02.520 uma, não é uma ferramenta que tu vai
+00:57:03.720 instalar na tua máquina. Ela conecta no
+00:57:05.960 teu liner, no teu giro, no que for no
+00:57:07.520 meu caso, no linear. E eu consigo ver as
+00:57:10.240 etapas do meu fluxo e o que que cada
+00:57:12.760 etapa faz e colocar regras nela e dizer:
+00:57:14.960 &quot;Ah, quando cair aqui, isso aqui vai ser
+00:57:16.280 automático, isso aqui vai chamar um
+00:57:17.960 agente e esse tipo de coisa&quot;. Pensa que
+00:57:19.839 é o painel de controle da fábrica, tá?
+00:57:25.359 E tu vai configurar, vai ter, vai ter um
+00:57:27.000 agente que faz Qway, vai ter isso que um
+00:57:29.240 agente que faz outra coisa.
+00:57:41.760 Ó, tem vários agentes, cada um
+00:57:43.480 responsável por uma parte.
+00:57:48.440 Esse backlog que eu tô mostrando para
+00:57:50.119 vocês ali,
+00:57:55.000 aquele backlog que eu tô mostrando para
+00:57:56.359 vocês é só de exemplo pra gente
+00:57:58.520 desenvolver local, mas ele integra na
+00:58:00.720 tua ferramenta, tá?
+00:58:13.520 Então ele vai fazendo a fit. Outra coisa
+00:58:15.359 que é interessante, vocês vão ver, é, a
+00:58:17.559 ideia é que tu consiga conectar todas as
+00:58:20.200 coisas na tua fábrica. Então, tu
+00:58:21.240 consegue conectar, por exemplo, eh, opa,
+00:58:24.000 aqui é interessante, vou parar aqui para
+00:58:25.400 vocês verem. Então, tu consegue
+00:58:27.400 conectar,
+00:58:29.200 é, o que tu usa, sei lá, no nosso caso,
+00:58:31.359 a gente usa post para métricas, aí tu
+00:58:33.760 conecta gitub, post, todas as coisas que
+00:58:36.000 tu usa e a a fábrica entra naquele fluxo
+00:58:39.079 dela mesmo se arrumar lá. Então aqui tem
+00:58:42.039 essa parte do fluxo, mostra o teu fluxo
+00:58:43.799 todo, aonde precisa de humano, onde não
+00:58:46.000 precisa. A ideia é que isso tudo seja
+00:58:47.880 configurável. A ideia é que tu tenha a
+00:58:49.920 tua fábrica de software como código, né?
+00:58:53.160 E assim, isso aqui eu não tô falando um
+00:58:54.240 produto para vender para vocês, não. Uma
+00:58:55.240 coisa que a gente vai vender, talvez
+00:58:56.079 seja open source e tal. O que a gente tá
+00:58:57.880 trazendo aqui é, será que é possível a
+00:59:00.480 gente automatizar a fábrica a um nível
+00:59:03.240 que a gente consiga ter a fábrica como
+00:59:04.680 código, que a gente consiga comitar uma
+00:59:06.359 melhoria na fábrica, que ela integre com
+00:59:08.599 todas as ferramentas que a gente usa,
+00:59:09.799 com todos os agentes. Essa aqui é a
+00:59:11.680 próxima fase de pesquisa que a gente tá
+00:59:13.280 indo. Eh,
+00:59:17.200 deixa eu entrar aqui, quero mostrar mais
+00:59:19.599 paraa frente para vocês. Aí tem por
+00:59:22.079 request dentro dela. Agora quero mostrar
+00:59:24.039 o fluxo por outro lado. Deixa eu mostrar
+00:59:26.400 aqui.
+00:59:28.160 Quero mostrar o fluxo agora pro outro
+00:59:29.799 lado para vocês,
+00:59:31.799 que é o lado da ferramenta,
+00:59:34.440 ó. Pela ferramenta.
+00:59:39.720 Sim, essa o Rodrigo falou: &quot;Não era para
+00:59:41.799 ter todas as informações no gir liner&quot;.
+00:59:43.880 Sim, elas estão no gir liner. Ali é
+00:59:45.559 aquele aquele backlog é só para
+00:59:46.760 desenvolvimento. Mas pensa que aqui é um
+00:59:48.920 fluxo de desenvolvimento normal, só que
+00:59:51.240 a nossa fábrica tá plugada. Então, a
+00:59:52.760 pessoa vai criar no Linear
+00:59:55.079 e quem for lá no painel de controle da
+00:59:57.359 fábrica vai poder ver todas as tes que
+00:59:58.839 você tá passando, o custo de cada
+01:00:00.720 tesque, qual agente tá executando, se dá
+01:00:03.559 um problema, por exemplo, aqui, ó, o
+01:00:05.839 centry achou um problema, a ISO vai
+01:00:08.599 voltar pra triagem, isso vai ficar tudo
+01:00:10.400 visível na fábrica, por isso que tu vai
+01:00:13.440 controlar a tua fábrica em um lugar só.
+01:00:16.760 Então essa aqui é a ideia, basicamente.
+01:00:18.079 Ча.
+01:00:55.520 E agora qual que
+01:00:57.839 agora? Agora, qual que é o ponto? Vocês
+01:00:58.839 viram que aquele outro vídeo, eu tava
+01:01:00.400 mutado, vez de apertar pause e apertei
+01:01:02.359 mute. Vocês viram que o outro vídeo eu
+01:01:04.000 mostrei tipo mais de dentro da fábrica.
+01:01:06.680 Mas a o ponto aqui, gente, é o quê? Se
+01:01:10.440 quando vocês construírem a fábrica de
+01:01:11.839 vocês, vocês não precisam construir um
+01:01:14.359 software que todo mundo tem que instalar
+01:01:16.039 aquele software. Vocês têm que fazer o
+01:01:17.400 quê? Vocês tem que conseguir automatizar
+01:01:19.799 o fluxo que o time já usa. Normalmente
+01:01:22.119 as pessoas de do time de vocês, elas
+01:01:25.039 usam o quê? Gira, elas usam linear. E
+01:01:28.079 vocês vão ter que plugar nessas coisas.
+01:01:30.200 É isso que a gente deve fazer. O que a
+01:01:32.319 gente tá tentando fazer aqui é criar uma
+01:01:34.760 plataforma que as pessoas consigam
+01:01:36.240 plugar. Ah, eu no meu time uso Linear,
+01:01:38.799 uso uso Slack, uso esse tipo de coisa.
+01:01:41.079 Os meus agentes são cloud agents do da
+01:01:43.480 Antrópico e tal. Tu configura isso e tu
+01:01:46.200 tem monitoramento, custo, todo esse tipo
+01:01:47.880 de coisa. Então vamos ver se é possível,
+01:01:50.720 né? O que é o que a gente tá trabalhando
+01:01:52.079 que o William que eu falei puxou.
+01:01:54.400 Infelizmente ele não tá aqui para
+01:01:55.359 apresentar, mas é um trabalho bem legal
+01:01:57.839 que a gente vai começar a focar. Quero
+01:01:59.000 ir mais para frente aqui
+01:02:02.520 para mostrar para vocês aqui. Ele tá
+01:02:05.119 fixando os bugs e tal.
+01:02:08.000 Depois abre um por request.
+01:02:11.359 Tá provando.
+01:02:31.680 Então a Ixo, por exemplo, pode notificar
+01:02:33.960 a pessoa no Slack, mas se a pessoa for
+01:02:35.720 lá dentro da fábrica, ela vai ver uma
+01:02:38.440 eixo que tem e desbloquear.
+01:02:42.520 O ponto aqui é o quê? É as ferramentas
+01:02:45.200 seguem sendo o que elas são. Só um nível
+01:02:47.359 mais de automação em cima, basicamente.
+01:02:55.920 Aí tá provou no Slack.
+01:02:59.400 Então
+01:03:02.640 pra gente voltar aqui, eu vou voltar
+01:03:05.599 agora porque eu tava apresentando. Cadê
+01:03:07.400 aqui?
+01:03:09.799 Qual que é a ideia? A gente tá chamando
+01:03:11.039 de Lod essa ferramenta. Foi o William
+01:03:12.520 que deu esse nome. Ainda não sei se esse
+01:03:13.839 vai ser o nome, mas qual que é a ideia?
+01:03:16.680 A gente tem esse painel que essa uma
+01:03:18.760 visão da fábrica mesmo, painel de
+01:03:21.400 controle. Nela tu tem entrada, seja o
+01:03:24.839 Lineer, GitHub, ISO, de onde for, todas
+01:03:28.039 essas coisas tu consegue configurar. Tem
+01:03:29.799 uma camada de orquestração que tu
+01:03:31.240 consegue configurar. Então, tu vai ter
+01:03:34.079 eh, sei lá, um Sandbox, um cloud, code,
+01:03:37.160 cursor, algo assim.
+01:03:38.839 Tu tem um fluxo que tu configura também,
+01:03:41.160 tu tem um deploy que tu configura e
+01:03:43.400 todas essas coisas, se tu não tiver uma
+01:03:44.880 ferramenta, tu vai configurar elas,
+01:03:46.799 obviamente, mas tu vai ter que lembrar
+01:03:49.079 da configuração de cada uma. A ideia é
+01:03:50.960 que a gente fazer uma coisa mais
+01:03:52.119 central, que o time consiga manter. E a
+01:03:55.720 gente parando agora para comparar, né, o
+01:03:58.359 fluxo que eu mostrei da nossa fábrica é
+01:04:00.880 esse aqui. Hoje tem um pedido do Slack,
+01:04:03.920 o Herms cria uma ISO, no Liner tem um
+01:04:06.480 tudo aprovado, vai para um cloud agent
+01:04:08.960 ou vai pro Hermes, depende. Code review
+01:04:11.400 humano e agente. Tem, faz o merge, vai
+01:04:13.640 pra produção. Com automação, a gente tem
+01:04:16.960 um painel,
+01:04:19.440 o pedido vem ainda, pode ir pro Hermes
+01:04:22.599 no nosso caso, mas a ferramenta da
+01:04:26.240 fábrica fica no meio. Ela delega para um
+01:04:28.599 especialista, se precisar para um para
+01:04:30.200 um agente especialista, ela cuida desse
+01:04:33.119 fluxo, ela nos dá o custo de volta e a
+01:04:35.880 gente tem aquela visão de todo o fluxo,
+01:04:37.799 o que que tá envolvido em cada parte,
+01:04:39.240 quais agentes. Então a ideia é a gente
+01:04:43.599 sofituorizar, automatizar essa fábrica.
+01:04:47.000 E isso não veio só da nossa cabeça, tá?
+01:04:49.520 Eu vou deixar algumas ideias para vocês,
+01:04:51.640 mas o pessoal da VARP aqui, eles são
+01:04:54.599 talvez a maior referência tentando
+01:04:56.480 automatizar essas essas fábricas de
+01:04:58.400 software. Vou deixar esse cara aqui para
+01:05:00.599 vocês darem uma pesquisada também.
+01:05:03.039 E a ideia é tu ter fábrica de software
+01:05:04.720 como código. Eles são uma das
+01:05:06.960 referências que a gente tem usado
+01:05:08.200 bastante também. Claro que é pago, claro
+01:05:10.680 que não é fácil de integrar numa
+01:05:11.880 empresa, mas é uma referência legal de
+01:05:14.559 usar. O ARP era do terminal, eles estão
+01:05:16.200 pivotando agora para fazer fábricas de
+01:05:18.480 software. A ideia deles é conseguir
+01:05:19.799 automatizar isso. E essa parte aqui já é
+01:05:22.079 bem legal, ó, tipo de tu conseguir ter
+01:05:25.079 toda tua fábrica como código, todas as
+01:05:26.599 skills que são usadas na fábrica, todas
+01:05:28.520 as dependências, por exemplo,
+01:05:29.640 integrations, linear, slack, tudo isso a
+01:05:31.839 gente tá construindo também para
+01:05:33.720 construir, para ver se é viável a gente
+01:05:35.839 ter esse nível de automação, tá? E a
+01:05:38.480 gente obviamente vai trazer pra
+01:05:39.480 comunidade, a gente vai trazer primeiro
+01:05:40.880 pra nossa formação Elevate, que a gente
+01:05:42.279 tá eh trabalhando bastante ali, mas a
+01:05:45.599 gente vai trazer também esse conteúdo
+01:05:47.680 para todo mundo, que é bem importante.
+01:05:49.720 Obviamente a gente vai trazer se ver se
+01:05:51.160 é viável automatizar, porque qual que é
+01:05:53.279 o a complexidade
+01:05:55.440 de uma fábrica de software, por isso eu
+01:05:56.920 quero voltar aqui para vocês. Trouxe
+01:05:58.400 vários exemplos, mas pra gente finalizar
+01:06:01.640 isso aqui. Vocês começam isso aqui na
+01:06:04.480 empresa de vocês integrando as
+01:06:07.079 ferramentas que vocês já tm, que nem eu
+01:06:08.480 tô fazendo. Vou botar um agente teammate
+01:06:11.400 para trabalhar. Vou começar a fazer
+01:06:13.599 fluxos que ele consiga entregar de ponta
+01:06:15.520 a ponta. Quando vocês esverem com isso
+01:06:17.920 redondo, tem um agente que tu pede uma
+01:06:20.000 coisa para ele, ele é confiável, ele
+01:06:21.279 entrega. Tu tem uma gente que consegue
+01:06:23.200 fazer triagem de coisas, tem uma gente
+01:06:25.559 que realmente ajuda o time, aí tu dá um
+01:06:27.520 próximo passo, pô, será que eu consigo
+01:06:29.480 ir agora para a fazer uma fábrica de
+01:06:33.240 software como código? Tu consegue
+01:06:35.640 investir tempo nisso? Aí vale a pena tu
+01:06:37.680 começar a investir, tá? Por se que a
+01:06:39.359 gente é dev, a gente quer construir
+01:06:40.480 coisa, a gente quer construir código,
+01:06:42.079 mas tem uma linha, né? Até tu constru,
+01:06:43.839 eu mostrei para vocês, a nossa ainda não
+01:06:46.039 tem muito código e a ferramenta que a
+01:06:48.119 gente começou a construir, ela é muito
+01:06:49.880 mais visando uma pesquisa
+01:06:53.440 pra comunidade como um todo, né? Porque
+01:06:55.319 se fosse só a minha empresa, se a minha
+01:06:56.520 empresa não fosse de educação, eu ia tá
+01:06:58.760 mais do que feliz com o nosso fluxo que
+01:07:00.039 a gente tem agora, porque ele resolve o
+01:07:01.200 nosso problema, tá? Então pensem
+01:07:02.440 bastante nisso antes de sair construindo
+01:07:04.359 coisa. Show, gente. Era isso que a gente
+01:07:07.200 tinha para vocês hoje. É um apanhado
+01:07:09.160 geral de fábricas de exemplo também para
+01:07:11.079 vocês implementarem no dia a dia de
+01:07:13.000 vocês. Eh, eu vou responder algumas
+01:07:17.160 perguntas aqui. Valeu demais. Valeu pelo
+01:07:18.960 apoio, valeu pelas palminhas. Massa
+01:07:20.960 demais,
+01:07:22.480 muito massa. Eh,
+01:07:26.480 a gravação vai ser disponibilizada para
+01:07:28.039 todo mundo, como sempre vai ser
+01:07:30.039 disponibilizada. O Renan perguntou: &quot;Vou
+01:07:32.039 dar uma pina, faz um curso de fábrica na
+01:07:33.680 Tech Club&quot;. A gente tá agora focando
+01:07:37.520 muito nesse conhecimento fundamente.
+01:07:40.799 Tá começando, gente, tá começando. A
+01:07:43.200 gente tem muito ainda que evoluir. E a
+01:07:45.559 gente tá tentando est na frente na
+01:07:47.119 pesquisa. A gente tá seguindo quem é os
+01:07:49.160 líderes de pesquisa, que por exemplo
+01:07:51.079 esse warpories aqui, que maioria do
+01:07:53.319 conteúdo deles é fechado. Então a gente
+01:07:54.720 tá trabalhando bastante. Esses
+01:07:56.880 princípios aqui, por exemplo, que a
+01:07:59.039 gente compartilhou com vocês, que eu
+01:08:00.200 sugiro vocês pensarem sobre ele pra
+01:08:01.640 fábrica de vocês, é uma fusão de criação
+01:08:04.599 nossa com padrões de indústria, porque
+01:08:06.359 não tem muito muita clareza ainda. Então
+01:08:09.520 eu espero que a gente chegue num
+01:08:10.520 conteúdo sólido de transformar em um
+01:08:11.960 curso, mas primeiro a gente tem que
+01:08:13.079 validar que é é possível a gente criar
+01:08:15.319 um padrão de fábrica de software que
+01:08:17.080 seja escalável para qualquer empresa?
+01:08:19.759 Pô, sim. Beleza. Dado isso, a gente vai
+01:08:22.158 trazer esse conteúdo, obviamente,
+01:08:24.679 para todo mundo. Eh,
+01:08:29.359 qual, olha só essa pergunta que legal do
+01:08:31.000 Wellington. Qual a importância de um bom
+01:08:33.560 código nas fábricas? Cara, um bom código
+01:08:36.000 é fundamental. Pensa nisso aqui.
+01:08:39.279 Se tu quer delegar essa parte de
+01:08:40.960 implementação, se tu quer que humanos e
+01:08:43.839 agentes
+01:08:45.679 eles possam trabalhar no mesmo Codebase
+01:08:47.839 de forma simples,
+01:08:50.158 tu tem que conseguir eh delegar e não
+01:08:54.600 ficar corrigindo coisa toda hora. E para
+01:08:56.359 isso tu precisa ter um codase bom,
+01:08:57.759 codase bem padronizado, bom de trabalhar
+01:08:59.560 com IR.
+01:09:12.799 O, o Marcos perguntou: &quot;Qual o primeiro
+01:09:14.319 passo para começar a construir essa
+01:09:17.120 fábrica?&quot; Cara, voltando aos princípios
+01:09:20.479 aqui, cadê? Aqui o primeiro passo que eu
+01:09:24.799 diria é padronizar o fluxo de
+01:09:26.920 desenvolvimento
+01:09:29.399 tu tem skills que tu usa para
+01:09:31.120 desenvolver que o agente também vai
+01:09:33.439 usar. Próximo, depois disso, cria um
+01:09:35.839 agente para começar a ajudar o teu time
+01:09:37.439 e ele usa essas mesmas skills.
+01:09:40.799 Aí o próximo é ter um brain para que o
+01:09:42.920 agente, o humano saiba as coisas. C ter
+01:09:45.560 trazido esses passos, na verdade isso é
+01:09:46.880 bem importante. E aí depois o próximo é
+01:09:49.560 tu integrar com as ferramentas, Liner,
+01:09:52.359 esse tipo de coisa. Mas mais ou menos
+01:09:53.759 essa ordem ajuda bastante. É a formação
+01:09:57.320 que eu falei é o Elevate, é a nossa
+01:09:58.640 formação que agora tá com turma fechada,
+01:10:01.920 tá? Mas na Black Frid a gente vai ter um
+01:10:04.480 anúncio legal aí relacionado a ela.
+01:10:07.760 Show, gente. Eh, deixa eu ver aqui.
+01:10:11.679 Tinha mais alguma pergunta?
+01:10:15.080 Ah, isso aqui é bem interessante, ó.
+01:10:16.880 Nesse contexto de fábricas, agentes e e
+01:10:19.199 agênticas, imaginam que deve ter uma
+01:10:20.719 camada de memória de longo prazo. Isso
+01:10:22.640 mesmo. No caso que eu mostrei para vocês
+01:10:25.400 na nossa fábrica, o Willly é quem
+01:10:27.600 coordena a fábrica. Ele tem a memória
+01:10:29.440 dele. Ele é um agente que tem uma
+01:10:31.000 memória. No caso da da que eu mostrei
+01:10:33.440 que a gente tá construindo aquela outra,
+01:10:36.480 aquela ali a própria fábrica tem uma
+01:10:39.080 memória dela. Então é importante,
+01:10:41.280 memória é fundamental.
+01:10:51.960 Vamos ver.
+01:10:57.679 O Yuri perguntou: &quot;Quanto vocês gastam
+01:10:59.159 em média para rodar toda essa estrutura
+01:11:00.840 de agêntica por mês?&quot;
+01:11:02.880 Cara, aí que tá as ferramentas hoje. Por
+01:11:05.520 isso que eu falo, primeiro tu começa
+01:11:07.719 usando o que as ferramentas já tes
+01:11:09.400 construir algo, tipo, mostrei para vocês
+01:11:11.040 do painel de controle. A gente paga o
+01:11:13.400 linear normal pro usuário e o que a
+01:11:16.440 gente paga a mais é pro nosso pro Will,
+01:11:19.480 esse nosso agente aqui, que é o que tá
+01:11:22.000 envolvido em tudo. A gente paga como se,
+01:11:25.239 opa, cadê
+01:11:27.480 aqui? Esse cara aqui, esse Will aqui, a
+01:11:30.679 gente paga como se fosse um usuário, tá?
+01:11:35.320 a gente paga uma licença para ele no
+01:11:37.719 GitHub. Ele tem uma conta no cloud para
+01:11:40.400 usar o cloud e aí ele tá com uma de 100,
+01:11:43.320 eu acho. Então, pro agente é o custo do
+01:11:46.840 agente. A gente tem o custo da máquina
+01:11:48.760 que ele roda, que é uma VPS que tá acho
+01:11:50.719 que 40
+01:11:52.960 também. Então para nós é um custo baixo,
+01:11:56.679 só que assim, outros custos que vocês
+01:11:59.080 vão ter num time maior, vocês vão usar
+01:12:01.480 mais cloud agents, vão pagar um pouco
+01:12:03.199 pro cloud, depende de quais vocês usam.
+01:12:05.920 Então assim, não é um custo a mais, tá
+01:12:07.719 gente, para para ter. E sinceramente eu,
+01:12:11.080 o retorno que a gente tem é bizarro,
+01:12:12.639 porque a gente delega muita coisa pr pra
+01:12:15.120 fábrica, pro agente fazer no geral.
+01:12:17.600 Então não é um custo alto, não.
+01:12:31.960 Show.
+01:12:37.560 Ó, o Renon perguntou: &quot;Modelo importa
+01:12:41.880 num fluxo desses usar modelos de tokens
+01:12:44.480 e usos maiores, mais baratos faz melhor,
+01:12:46.719 faz mais sentido? Como minim, Kim,
+01:12:49.840 Deepsic?
+01:12:51.400 Cara, tu pode instrumentar na tua
+01:12:54.560 fábrica que tu vai ter, dependendo do
+01:12:56.440 fluxo, por exemplo, ah, se é avaliar uma
+01:13:00.320 um bug que um cliente reportou,
+01:13:04.320 ah, cara, esse daí eu vou usar um modelo
+01:13:06.000 menor, porque é só fazer uma pesquisa
+01:13:07.560 simples. Agora é uma triagem de bug,
+01:13:10.360 cara. Eu vou usar um opus para fazer uma
+01:13:12.080 triagem. E ou outra coisa, por exemplo,
+01:13:15.719 ah, se alguém chamar o bote para
+01:13:19.000 perguntar coisas simples, ele usa um
+01:13:21.679 modelo mais simples, tal. Cara, dá dá
+01:13:23.719 para configurar essas coisas. Não é a
+01:13:25.360 realidade para nós. Hoje a gente usa o
+01:13:26.960 Opus para tudo. Por quê, cara? O Opus é
+01:13:30.520 é bizarro assim para coisas autônomas. A
+01:13:32.679 qualidade dele é muito boa, então acaba
+01:13:34.560 se pagando. Porque o que eu não quero é
+01:13:37.120 ter que est toda hora corrigindo um
+01:13:38.560 bote, sabe, de qualidade de código, esse
+01:13:41.199 tipo de coisa. Então a gente aceita
+01:13:42.719 pagar um pouco mais para isso. Mas a
+01:13:45.719 ideia é que assim, se tu monta tua
+01:13:46.960 fábrica, tu configura o que tu quiser
+01:13:48.840 para cada parte.
+01:14:05.719 Pergunta de sempre. A fábrica
+01:14:06.719 conseguiria selecionar um modelo
+01:14:07.960 específico para determinada severidade?
+01:14:10.040 Consegue? Porque, por exemplo, eh, pensa
+01:14:12.639 o seguinte, isso não é difícil de fazer,
+01:14:14.280 tá? Pensa aqui, vamos pegar uma iso
+01:14:16.360 nossa, tá vendo que quando o agente faz
+01:14:20.159 triagem de uma iso, ele bota o impacto
+01:14:22.760 dela?
+01:14:24.320 Tu pode dizer que assim, toda iso que
+01:14:25.800 cair
+01:14:27.639 em progress aqui com uma tag médio, tu
+01:14:32.239 vai usar um sonetê medium para
+01:14:34.760 implementar, porque não tem muito
+01:14:36.000 impacto. Mas agora toda iso que cair com
+01:14:38.560 impacto high, eu vou usar um opus para
+01:14:41.120 implementar. Então pensa que por isso
+01:14:43.679 que eu tô falando, é usar as ferramentas
+01:14:46.120 para conseguir automatizar esses fluxos,
+01:14:48.280 né? Então eu posso dizer que toda coisa
+01:14:50.159 que cair aqui eu vou, dependendo da CV
+01:14:53.480 do impacto dela, eu vou usar um um
+01:14:56.960 modelo diferente. Como que eu meço o
+01:14:59.199 impacto? É o próprio agente que faz a
+01:15:01.159 triagem, que bota a tag de impacto nela.
+01:15:03.719 Ele avalia. Que que ele avalia? Se eu
+01:15:05.600 não, se eu não me engano, é, eu posso
+01:15:07.560 perguntar para ele aqui, ó. Vamos
+01:15:09.080 perguntar para ele aqui. Cadê o Will?
+01:15:21.080 Vamos ver. Ele vai dizer para nós.
+01:15:33.960 Ele tá pensando, tá? A gente vai
+01:15:35.239 responder
+01:15:42.679 uma régua do passo cinco da skill dev do
+01:15:45.320 time. Classifico depois que o plano tá
+01:15:48.159 pronto com a TL6 packin. Beleza. Impacto
+01:15:50.480 low, uma fatia só que se desfaz com o
+01:15:53.520 revert simples, sem imigração. Médium,
+01:15:56.960 várias fatias, muda algo que o usuário
+01:15:59.920 vê. end point novo, migração que só
+01:16:02.800 acrescenta a coluna, ou seja, não tem
+01:16:04.440 uma break change, né? É forward. Impacto
+01:16:07.400 alto é basicamente migração, migração,
+01:16:10.719 breaking change, esse tipo de coisa.
+01:16:12.560 Então, penso assim, só aqui eu já
+01:16:13.679 consigo decidir modelo, né? Posso usar
+01:16:16.239 um modelo bom para fazer essa triagem. E
+01:16:18.440 aí, baseado no impacto, eu seleciono o
+01:16:20.520 modelo para implementar. Digo que low
+01:16:21.840 pode usar qualquer modelo.
+01:16:24.159 Então, é basicamente isso.
+01:16:26.760 O Will é o Willly é como se fosse, a
+01:16:28.679 gente usou muito cloud tag, tá? É, o
+01:16:29.960 cloud tá até aqui, ó. Cloud tá até aqui.
+01:16:33.280 Só que o cloud tag ele não é muito
+01:16:34.719 configurável. A gente precisa garantir o
+01:16:37.000 quê? Que ele usa mesmas skills para
+01:16:39.719 desenvolver mesmo que o dev usa que ele
+01:16:42.320 tem o fluxo próprio dele, que ele
+01:16:43.880 conecta nossos MCPs. Então o Hermes, que
+01:16:48.120 é o que a gente usa pro Will, é muito
+01:16:49.280 mais flexível que o cloud tag. Ele ficou
+01:16:51.520 bem melhor, mas a gente usava o cloud
+01:16:53.159 tag antes.
+01:17:08.639 Ó, o Rafael perguntou que é uma dúvida
+01:17:10.320 clara das pessoas. Qual a vantagem de
+01:17:12.600 uma perspectiva de produtividade de usar
+01:17:15.320 um bote como il comparação aos acessões
+01:17:19.920 cloud do cloud do cloud que também tem
+01:17:22.560 acesso a todas as ferramentas? É
+01:17:24.960 basicamente qual que é a coisa?
+01:17:27.560 é ter algo que tá sempre ativo. Pensa o
+01:17:30.679 seguinte, o Will, se um se um
+01:17:35.040 eh se o nosso build fica vermelho, ele
+01:17:38.320 mesmo vai lá e arruma. Ele abre um pull
+01:17:40.920 request, ele fica acompanhando aquele P
+01:17:42.199 request, ele arruma os testes, ele tá
+01:17:44.360 sempre on trabalhando. Tu usar uma
+01:17:46.440 sessão do cloud, tu vai dar um input,
+01:17:50.000 ele vai fazer o que vai fazer e vai te
+01:17:51.320 dar output. vai ter que dar de novo um
+01:17:54.120 input para ele. Então ele não vai ser
+01:17:56.360 como um membro do time, ele vai ser algo
+01:17:58.760 que tu tem que estar sempre dando promp.
+01:18:00.600 Então tem essa diferença de um bote que
+01:18:02.520 tá sempre ativo, de um agente que tu
+01:18:06.320 manda ele fazer uma coisa, ele faz,
+01:18:07.480 termina e para. Então essa que que é a
+01:18:09.600 grande diferença. E tem a parte de
+01:18:11.280 integração também, né? Então onde que tu
+01:18:13.480 usa um cloud agent, que é o agente que
+01:18:16.080 tu delega para rodar um código na nuvem
+01:18:18.639 quando tu quer que ele execute uma
+01:18:20.080 tarefa? Então, por exemplo, o Will, ele
+01:18:22.639 pode pegar uma tarefa, fazer triagem,
+01:18:25.400 botar em todo, e aquele to em vez de
+01:18:27.960 rodar na máquina dele, rodar lá num
+01:18:29.239 cloud agent, pode fazer isso. E ele
+01:18:32.360 mesmo assim segue o fluxo até depois do
+01:18:35.040 PR, ver se o PR foi certo e tal. Então,
+01:18:37.320 tu pode juntar os dois também é bem
+01:18:41.159 interessante. Ó, várias pessoas
+01:18:42.920 compartilhando de estão montando fábrica
+01:18:44.880 agênica também. Muito legal, gente.
+01:18:46.159 Muito legal.
+01:18:47.840 Show parando de compartilhar aqui. Bem
+01:18:50.520 massa. Compartilhem os cases aí. E
+01:18:52.920 gente, a próxima, lembrando, né, a nossa
+01:18:55.880 próxima aqui, ó, deixa eu lembrar aqui
+01:18:57.800 vocês que a nossa próxima
+01:19:01.239 live vai ser bem massa também. Nossa
+01:19:04.800 próxima live da Black Friday aqui no dia
+01:19:06.600 10, terça-feira que vem, vai ser sobre
+01:19:09.520 AI Engineer, que é a qual é aqui a gente
+01:19:12.760 tem falado muito do desse AI enabler ou
+01:19:15.639 da pessoa que cria fábrica, que ensina
+01:19:17.440 as pessoas a usar IA no time, mas também
+01:19:20.520 tem uma demanda grande crescente pro ano
+01:19:22.159 que vem que a gente vê que é do AI
+01:19:23.480 Engineer, que é essa pessoa que integra
+01:19:25.800 e nos produtos. E a gente vai trazer
+01:19:27.600 bastante casarem
+01:19:29.600 um pouco sobre isso, onde que dá para
+01:19:30.800 usar, onde que não dá. Na live do dia
+01:19:33.360 10. Vai ser bem massa. A gente aguarda
+01:19:35.199 vocês. Quem tá no grupo vai vai receber
+01:19:37.440 o convite. Quem não tá se inscreve ali
+01:19:39.920 que vai ser show de bola. Tá bom, gente?
+01:19:44.320 Massa demais. Eh, muito boas perguntas.
+01:19:48.120 Claro que a gente não consegue responder
+01:19:49.639 todo mundo, obviamente, mas a gente
+01:19:51.960 tenta.
+01:19:53.520 E uma última que eu acho boa essa daqui.
+01:19:55.239 Quais as principais vantagens de cloud
+01:19:57.440 agents?
+01:19:58.920 Conforme vocês começam a ficar maduros
+01:20:00.760 no uso de a, vocês vão ver que não tem
+01:20:03.560 muito por as coisas rodarem só na tua
+01:20:06.040 máquina. Pensa que no teu fluxo de
+01:20:07.679 desenvolvimento tu tem bug vindo, tu tem
+01:20:10.159 um monte de coisa, tu tá trabalhando
+01:20:11.920 numa coisa normalmente ou no máximo as
+01:20:13.760 duas, três em paralelo. Tem um monte de
+01:20:15.560 coisa, não precisa rodar na tua máquina,
+01:20:17.120 tu só quer dar um um aceitar e aquela
+01:20:19.159 coisa rodar em qualquer lugar. Então,
+01:20:21.280 Cloud a gente começa a entrar aí
+01:20:22.480 conforme tu vai ficando mais e mais
+01:20:24.000 maduro no teu fluxo com IA. E uma coisa
+01:20:26.560 que eu faço muito também é, cara, eu tô
+01:20:30.920 viajando e eu tô fazendo coisa prompt, o
+01:20:34.719 o bote faz, roda onde tiver que rodar.
+01:20:38.360 Então pense assim, trabalho tá sempre
+01:20:40.400 acontecendo, né? Vocês não precisam
+01:20:41.880 estar ativamente ali com computador
+01:20:44.520 ligado.
+01:20:46.400 Academia e rodando código. É, tem que
+01:20:48.360 cuidar até para não ser demais, né,
+01:20:49.600 cara? O cara tá sempre olhando a gente
+01:20:51.000 ali. É, mas aí é outro outro outro
+01:20:53.400 assunto, um assunto de de como é que é?
+01:20:57.639 De bem-estar. Tomem cuidado, tá gente?
+01:21:00.400 Não não usem a gente todo tempo.
+01:21:05.960 Show. Então tá. Boa noite para todo
+01:21:08.880 mundo. Valeu e até [risadas]
+01:21:11.440 terça-feira. Valeu, Víor.
+01:21:13.280 >> Valeu, Felipe. Valeu demais.
+01:21:15.080 Compartilhem com a gente os cases de
+01:21:16.239 vocês também. Marca a gente no LinkedIn
+01:21:18.400 que a gente gosta bastante. Valeu.
