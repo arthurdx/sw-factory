@@ -1,5 +1,9 @@
 # Build checklist (order from the video, min ~1:09:30 in the transcript)
 
+All phases apply to the TARGET repo (tinykit), not this one. Phase 1 files come from
+`scripts/bootstrap-target.sh <target> --profile tinykit`. Concrete exit-test tasks: docs/target-tinykit.md.
+Paths below like AGENTS.md / .github/ mean the target repo's copies (factory rules: AGENTS.factory.md).
+
 Order: standardize dev flow -> teammate agent -> brain -> integrations -> (later)
 factory as code. Do not skip ahead. Each phase has an exit test.
 

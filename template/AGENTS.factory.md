@@ -1,15 +1,8 @@
-# AGENTS.md: rules for humans and agents in this repo
+# Factory rules (shared by humans and agents)
 
-Same rules for everyone. If a rule is not enforced by CI, treat it as a request
-that will eventually be ignored, and promote it to a check.
-
-## Project
-Experimental "Software Factory V2" proof of concept. Replace this section with the
-real project description once the target workflow is chosen.
-
-## Commands
-- Test: `make test` (define it; CI calls it if present)
-- Lint: `make lint` (optional)
+Same rules for everyone. If a rule is not enforced by CI, it is a request that
+will eventually be ignored: promote it to a check. Project-specific build
+commands and conventions live in AGENTS.md; this file is the workflow layer.
 
 ## Workflow
 1. Work enters as a GitHub issue using the `task` template (intent + acceptance criteria).
@@ -24,10 +17,11 @@ real project description once the target workflow is chosen.
 - No deploys or production changes.
 - Maximum 3 fix rounds on one PR, then stop and label `needs-human`.
 - If a task fails or times out, report and stop. No blind retries.
-- If the label `factory:halt` exists on the issue or repo, do nothing.
+- If the label `factory:halt` is on the issue or repo, do nothing.
+- If the issue has an open design question, ask in a comment and label `needs-human`. Do not guess.
 - Do not claim tests pass unless you ran them and can paste the output.
 
 ## Definition of done
-- Acceptance criteria in the issue are each addressed in the PR description.
+- Each acceptance criterion in the issue is addressed in the PR description.
 - Tests added or updated for changed behavior; CI green.
 - PR lists what was verified and what the agent could NOT verify.
